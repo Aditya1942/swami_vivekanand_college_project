@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CourseComponent = ({ title, img, subCourse }) => {
   let imgUrl = `${process.env.PUBLIC_URL}/img/courses/${img}`;
@@ -6,15 +7,22 @@ const CourseComponent = ({ title, img, subCourse }) => {
     <div className="properties pb-20">
       <div className="properties__card">
         <div className="properties__img overlay1">
-          <a href="#">
+          <b>
             <img height={220} src={imgUrl} alt="" />
-          </a>
+          </b>
         </div>
         <div className="properties__caption">
           <p>{title}</p>
           {subCourse.map((item, index) => (
             <h3 key={item.id} className="mt-2">
-              <a href="#">{item.title}</a>
+              <Link
+                to={{
+                  pathname: `/courses/${item.name}`,
+                  state: { id: item.id, title: item.maniTitle, img: img },
+                }}
+              >
+                {item.title}
+              </Link>
             </h3>
           ))}
         </div>

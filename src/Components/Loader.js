@@ -7,7 +7,7 @@ const Loader = ({ open }) => {
         <div className="preloader-inner position-relative">
           <div className="preloader-circle" />
           <div className="preloader-img pere-text">
-            <img src="assets/img/logo/loder.png" alt />
+            <img src="assets/img/logo/loder.png" alt="" />
           </div>
         </div>
       </div>

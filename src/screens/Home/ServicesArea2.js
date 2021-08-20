@@ -8,7 +8,7 @@ const ServicesArea2 = () => {
           <div className="col-lg-4 col-md-6 col-sm-8">
             <div className="single-services mb-30">
               <div className="features-icon">
-                <img src="assets/img/icon/icon1.svg" alt />
+                <img src="assets/img/icon/icon1.svg" alt="" />
               </div>
               <div className="features-caption">
                 <h3>60+ UX courses</h3>
@@ -19,7 +19,7 @@ const ServicesArea2 = () => {
           <div className="col-lg-4 col-md-6 col-sm-8">
             <div className="single-services mb-30">
               <div className="features-icon">
-                <img src="assets/img/icon/icon2.svg" alt />
+                <img src="assets/img/icon/icon2.svg" alt="" />
               </div>
               <div className="features-caption">
                 <h3>Expert instructors</h3>
@@ -30,7 +30,7 @@ const ServicesArea2 = () => {
           <div className="col-lg-4 col-md-6 col-sm-8">
             <div className="single-services mb-30">
               <div className="features-icon">
-                <img src="assets/img/icon/icon3.svg" alt />
+                <img src="assets/img/icon/icon3.svg" alt="" />
               </div>
               <div className="features-caption">
                 <h3>Life time access</h3>
