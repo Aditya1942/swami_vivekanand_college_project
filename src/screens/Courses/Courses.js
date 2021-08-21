@@ -9,7 +9,7 @@ const Courses = () => {
       <Header
         title="Our Courses"
         Breadcrumb={["Courses"]}
-        BreadcrumbLink={["courses"]}
+        BreadcrumbLink={["/courses"]}
       />
       <div>
         {/* Courses area start */}

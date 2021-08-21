@@ -48,7 +48,7 @@ const Syllabus = () => {
       <Header
         title="Syllabus"
         Breadcrumb={["Syllabus"]}
-        BreadcrumbLink={["syllabus"]}
+        BreadcrumbLink={["/syllabus"]}
       />
       <div className="courses-area section-padding40 fix">
         <div className="container">

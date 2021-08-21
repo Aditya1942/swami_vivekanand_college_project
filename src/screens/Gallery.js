@@ -8,7 +8,7 @@ const Gallery = () => {
       <Header
         title="Gallery"
         Breadcrumb={["Gallery"]}
-        BreadcrumbLink={["gallery"]}
+        BreadcrumbLink={["/gallery"]}
       />
       <div className="container">
         {GalleryData.map((item) => (

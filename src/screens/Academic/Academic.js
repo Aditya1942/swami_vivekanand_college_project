@@ -31,7 +31,7 @@ const Academic = () => {
       <Header
         title="Academic"
         Breadcrumb={["Academic"]}
-        BreadcrumbLink={["academic"]}
+        BreadcrumbLink={["/academic"]}
       />
       <div className="courses-area section-padding40 fix">
         <div className="container">

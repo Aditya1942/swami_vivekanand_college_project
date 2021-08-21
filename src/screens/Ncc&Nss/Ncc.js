@@ -22,7 +22,7 @@ const NccGallery = ({ title, img }) => {
 const Ncc = () => {
   return (
     <div>
-      <Header title="NCC" Breadcrumb={["NCC"]} BreadcrumbLink={["ncc"]} />
+      <Header title="NCC" Breadcrumb={["NCC"]} BreadcrumbLink={["/ncc"]} />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">

@@ -14,6 +14,7 @@ import Gallery from "./screens/Gallery";
 import Academic from "./screens/Academic/Academic";
 import Syllabus from "./screens/Academic/Syllabus";
 import About from "./screens/About";
+import Contact from "./screens/Contact";
 
 function Router() {
   const [open, setOpen] = useState(true);
@@ -41,6 +42,7 @@ function Router() {
           <Route exact path="/academic" component={Academic} />
           <Route exact path="/syllabus" component={Syllabus} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
         </Switch>
 
         <Footer />

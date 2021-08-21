@@ -4,7 +4,11 @@ import Header from "../Components/Header";
 const About = () => {
   return (
     <div className="about">
-      <Header title="About" Breadcrumb={["About"]} BreadcrumbLink={["about"]} />
+      <Header
+        title="About"
+        Breadcrumb={["About"]}
+        BreadcrumbLink={["/about"]}
+      />
       <section className="sample-text-area">
         <div className="container box_1170">
           <h3 className="text-heading">About Us</h3>
