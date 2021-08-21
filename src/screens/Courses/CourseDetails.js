@@ -4,6 +4,7 @@ import Header from "../../Components/Header";
 import { CourseDetailData } from "../../Database";
 import CourseDetailHeader from "./CourseDetailHeader";
 import CourseDetailsAfter from "./CourseDetailsAfter";
+
 import CourseDetailsEligibility from "./CourseDetailsEligibility";
 import CourseDetailsFutureScope from "./CourseDetailsFutureScope";
 import CourseSubjects from "./CourseSubjects";
@@ -40,8 +41,10 @@ const CourseDetails = () => {
             subjects={CourseData?.subjects?.subjects}
             semesters={CourseData?.subjects?.semester}
           />
-
-          <CourseDetailsFutureScope futureScope={CourseData?.futureScope} />
+          <CourseDetailsFutureScope
+            courseDuration={CourseData?.courseDuration}
+            futureScope={CourseData?.futureScope}
+          />
           <CourseDetailsAfter afterThisCourse={CourseData?.afterThisCourse} />
         </div>
       </div>

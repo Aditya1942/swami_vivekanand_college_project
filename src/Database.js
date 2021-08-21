@@ -243,7 +243,6 @@ export const CourseDetailData = [
     img: "cs.jpg",
     name: "bcsit",
     subjects: {
-      // subjects: ["English", "History", "Gujarati", "Economics", "Hindi"],
       subjects: [],
       semester: [
         {
@@ -337,5 +336,559 @@ export const CourseDetailData = [
     afterThisCourse: `The BScIT is an undergraduate degree course in computer applications for duration of 3 years. After completing BScIT, a student can go for M.Sc(IT&CA)/MCA which is a master course in computer application and is considered equivalent to engineering course B.Tech. Apart from these options candidates are informed that after completing their BA course they become eligible to appear for government exams.`,
     courseDuration:
       "This Program is extend to six semester each with duration six months.",
+  },
+  {
+    id: 3,
+    maniTitle: "M.SC.(IT & CS)",
+    title:
+      "MSC(IT &CA) - Master of Science (Information Technology & Computer Applications)",
+    img: "cs.jpg",
+    name: "mscit",
+    subjects: {
+      subjects: [],
+      semester: [
+        {
+          id: 1,
+          title: "Semester-1",
+          subjects: [
+            "Application development using advance java",
+            "Advance web development in laravel",
+            "Nosql database: mongodb",
+            "Project development (in house)",
+            "Practical - 1",
+            "Practical - 2",
+            "Project development",
+          ],
+        },
+        {
+          id: 2,
+          title: "Semester-2",
+          subjects: [
+            "Applicatoin development using advanced android",
+            "Introduction to big data and hadoop",
+            "Cloud computing",
+            "Practical - 1",
+            "Practical - 2",
+            "Project development (in house)",
+          ],
+        },
+        {
+          id: 3,
+          title: "Semester-3",
+          subjects: [
+            "Developing cross platform mobile application using xamarin",
+            "Web application development using django",
+            "Programming with r for data science",
+            "Practical - 1",
+            "Practical - 2",
+            "Project development (in house)",
+          ],
+        },
+        {
+          id: 4,
+          title: "Semester-4",
+          subjects: ["Industrial project development"],
+        },
+      ],
+    },
+
+    description: `It is a two years Postgraduate course that can be pursued by the student who is aspiring their minds in IT field.
+    The duration of the course is 2 years and divided into 4 semesters. It comprises of the subjects like database, networking, data structure, core programming languages like C and java. This course provides a lot of opportunities to the students who are interested in computer field and wants to work in the IT sector as programmer or software developer. To get complete knowledge about the course and career scope, you can go through this article.`,
+    eligibility:
+      "MSC(IT &CA) - Master of Science (Information Technology & Computer Applications requires a candidate to have passed any graduate exam with minimum 48%",
+    futureScope: [
+      "Lecturer",
+      "Web Designer",
+      "Web Developer",
+      "SEO",
+      "Software Developer",
+      "Mobile Application Developer",
+      "DBA",
+      "System Tester",
+      "Network Administrator",
+    ],
+    afterThisCourse: `The MSC(IT & CA) is an Postgraduate degree course in computer applications for duration of 2 years. After completing MSC(IT & CA)
+    MSC(IT & CA) is most popular among aspiring teachers/lecturers and researchers. UGC-NET/JRF and PhD are among popular options for MSC(IT & CA) degree holders.`,
+    courseDuration:
+      "This Program is extend to four semesters each with duration six months.",
+  },
+  {
+    id: 4,
+    maniTitle: "Bachelor of Science(B.Sc)",
+    title: "BSc - Bachelor of Science.",
+    img: "science.jpg",
+    name: "bsc",
+    subjects: {
+      subjects: ["English", "History", "Gujarati", "Economics", "Hindi"],
+      semester: [],
+    },
+
+    description: `It is a three-year undergraduate course that can be pursued by the student who is aspiring their minds in Research field.
+    When it comes to choosing a graduation course after Class XII, Bachelor of Science (BSc) is one of the most common options selected by students. Students with an academic qualification of Class XII can pursue BSc course in different branches.`,
+    eligibility:
+      "Bachelor of Science requires a candidate to have passed HSC (10+2) exam from science stream as passing subject with minimum 45% marks at 12th standard.",
+    futureScope: [
+      "Science graduates are valued by proprietor and find rewarding careers across a wide range of Industry and Government sectors.",
+      "Bachelor of Science graduates enjoy the opportunity to pursue a career in many different fields, both in India and overseas.",
+      "The active pursuit of RESEARCH in science and technology is an area which graduates are encouraged to consider after their initial undergraduate studies.",
+      "After the completion of the B.Sc course, students can work in various areas which include both science & non-science fields.",
+      "The job opportunities available for the students are not only great in terms of salary package, but also a satisfying job experience.",
+      "There are various opportunities available for the students after B.Sc. the students can go in a research field, in some colleges the students are recruited directly by the big organizations at a very good salary package, some professional B.Sc. courses like animation,Pharma Companies and IT open the door of animation ,Pharma Companies and IT industry for the graduates, the other professional B.Sc.",
+      "Field also have vast career opportunities.",
+      "Apart from the research jobs, students can also work or get jobs in Marketing, Business & Other technical fields. Science graduates also recruited in the bank sector to work as customer service executives.",
+      "Students can also find employment in government sectors.",
+      "Network Just like an academic courses, students who have a B.Sc degree also have an excellent employment opportunities. Jobs for B.Sc graduates are not just restricted in the field of science but also they can explore others areas like management, engineering, law etc.",
+    ],
+    afterThisCourse: `The BSC is an undergraduate degree course in Science faculty for duration of 3 years. After completing BSC, a student can go for M.Sc which is a master course in Science faculty.
+    Apart from these options candidates are informed that after completing their BA course they become eligible to appear for government exams.`,
+    courseDuration:
+      "This Program is extend to four semesters each with duration six months.",
+  },
+  {
+    id: 5,
+    maniTitle: "Bachelor of Arts(B.A.)",
+    title: "BA - Bachelor of Arts.",
+    img: "arts.jpg",
+    name: "ba",
+    subjects: {
+      subjects: ["Chemistry", "Physics", "Mathematics", "Microbiology"],
+      semester: [],
+    },
+
+    description: `It is a three-year undergraduate course that can be pursued by the student who is aspiring their minds in Arts field.
+    The duration of the course is 3 years and divided into 6 semesters. It comprises of the subjects like English , History, Gujarati , Economics and Hindi. This course provides a lot of opportunities to the students who are interested in Teaching field To get complete knowledge about the course and career scope, you can go through this article.`,
+    eligibility:
+      "Bachelor of Arts requires a candidate to have passed HSC (10+2) exam from any stream as passing subject with minimum 45% marks at 12th standard.",
+    futureScope: [
+      "Content Writer",
+      "Social Worker",
+      "Airhostess/ Flight Steward",
+    ],
+    afterThisCourse: `After completing a BA course candidates can pursue a MA course in the same discipline in which they pursued their graduation. Candidates who want to make a career as a teacher can opt for a BEd course after completing their BA degree.
+    Apart from these options candidates are informed that after completing their BA course they become eligible to appear for government exams.`,
+    courseDuration:
+      "This Program is extend to six semester each with duration six months",
+  },
+  {
+    id: 6,
+    maniTitle: "Bachelor of Commerce(B.COM)",
+    title: "B.Com - Bachelor of Commerce",
+    img: "commerce.jpg",
+    name: "bcom",
+    subjects: {
+      subjects: [],
+      semester: [
+        {
+          id: 1,
+          title: "Semester-1",
+          subjects: [
+            "English Language - 1",
+            "Principles of Micro Economics - 1",
+            "Financial Accounting - 1",
+            "Business Organisation & Management - 1",
+            "Company Law - 1",
+            "Personal Selling and Salesmanship - 1",
+            "Entrepreneurship - 1",
+            "Accounting - 1",
+          ],
+        },
+        {
+          id: 2,
+          title: "Semester-2",
+          subjects: [
+            "English Language - 2",
+            "Principles of Micro Economics - 2",
+            "Financial Accounting - 2",
+            "Business Organisation & Management - 2",
+            "Company Law - 2",
+            "Personal Selling and Salesmanship - 2",
+            "Entrepreneurship - 2",
+            "Accounting - 2",
+          ],
+        },
+        {
+          id: 3,
+          title: "Semester-3",
+          subjects: [
+            "English Language - 3",
+            "Principles of Macro Economics - 1",
+            "Corporate Accounting - 1",
+            "Cost Accounting - 1",
+            "Income Tax Law and Practice - 1",
+            "Business Communication - 1",
+            "Accounting - 3",
+          ],
+        },
+        {
+          id: 4,
+          title: "Semester-4",
+          subjects: [
+            "English Language - 4",
+            "Principles of Macro Economics - 2",
+            "Corporate Accounting - 2",
+            "Cost Accounting - 2",
+            "Income Tax Law and Practice - 2",
+            "Business Communication - 2",
+            "Accounting - 4",
+          ],
+        },
+        {
+          id: 5,
+          title: "Semester-5",
+          subjects: [
+            "English Language - 5",
+            "Indian Economy - 1",
+            "Business Mathematics and Statistics - 1",
+            "Auditing and Corporate Governance - 1",
+            "Financial Management - 1",
+            "Management Accounting - 1",
+            "Accounting - 5",
+          ],
+        },
+        {
+          id: 6,
+          title: "Semester-6",
+          subjects: [
+            "English Language - 6",
+            "Indian Economy - 2",
+            "Business Mathematics and Statistics - 2",
+            "Auditing and Corporate Governance - 2",
+            "Financial Management - 2",
+            "Management Accounting - 2",
+            "Accounting - 6",
+          ],
+        },
+      ],
+    },
+
+    description: `It is a three-year undergraduate course that can be pursued by the student who is aspiring their minds in commerce field.
+    The duration of the course is 3 years and divided into 6 semesters. It comprises of the subjects like account, auditing. This course provides a lot of opportunities to the students who are interested in account field and wants to work in the commerce sector as . To get complete knowledge about the course and career scope, you can go through this article.`,
+    eligibility:
+      "Bachelor of Commerce requires a candidate to have passed HSC (10+2) exam from commerce stream as passing subject with minimum 45% marks at 12th standard.",
+    futureScope: [
+      "Accountant",
+      "Financial Analyst",
+      "Financial Consultant",
+      "Account Executive",
+      "Jr Accountant",
+      "Business Consultant",
+      "Accounts Manager",
+      "Business Executive",
+      "Tax Consultant",
+    ],
+    afterThisCourse: `The B.Com is an undergraduate degree course in Commerce for duration of 3 years. After completing B.Com, a student can go for M.Com which is a master course in Commerce and B.Ed which is a Educational course in Commerce.
+    Apart from these options candidates are informed that after completing their BA course they become eligible to appear for government exams.`,
+    courseDuration:
+      "This Program is extend to six semester each with duration six months",
+  },
+  {
+    id: 7,
+    maniTitle: "Master of Commerce(M.COM)",
+    title: "M.Com - Master of Commerce",
+    img: "commerce.jpg",
+    name: "mcom",
+    subjects: {
+      subjects: [],
+      semester: [
+        {
+          id: 1,
+          title: "Semester-1",
+          subjects: [
+            "Business Research",
+            "Managerial Economics",
+            "Accounting for Management",
+            "Financial Management & Policy",
+            "Management of Self & Career",
+          ],
+        },
+        {
+          id: 2,
+          title: "Semester-2",
+          subjects: [
+            "Legal Aspects of Corporate Business",
+            "International Business",
+            "Corporate Financial Reporting",
+            "Marketing Management",
+            "Global Strategic Management",
+          ],
+        },
+        {
+          id: 3,
+          title: "Semester-3",
+          subjects: [
+            "Business Research Applications",
+            "Advanced Corporate Accounting",
+            "Advanced Cost Accounting",
+            "Advanced Cost & Financial Accounting",
+            "Advanced Management Accounting",
+          ],
+        },
+        {
+          id: 4,
+          title: "Semester-4",
+          subjects: [
+            "Organizational Behaviour",
+            "Financial Accounting for Managers",
+            "Advanced Cost & Management Accounting",
+            "Advanced Corporate Tax Accounting",
+            "International Accounting",
+          ],
+        },
+      ],
+    },
+
+    description: `It is a two-years Postgraduate course that can be pursued by the student who is aspiring their minds in Commerce field.
+    Masters of Commerce or MCom is a post graduate level course ideal for candidates who wish to make a career in banking financial services and insurance (BFSI) as well as accounting and commerce sectors. The 2-year course delves deeper into the functioning of the economy, capital, revenue, trade, taxes, etc. taught in BCom.`,
+    eligibility:
+      "Master of Commerce requires a candidate to have passed BCOM, BBA exam with minimum 45%",
+    futureScope: [
+      "Lecturer",
+      "Accountant/Senior Accountant",
+      "Finance Executive",
+      "Assistant Manager",
+      "Cashier/Teller",
+      "Bank Manager",
+      "Bank Executive",
+      "Finance Consultant",
+    ],
+    afterThisCourse: `MCom is most popular among aspiring teachers/lecturers and researchers. UGC-NET/JRF and PhD are among popular options for MCom degree holders.`,
+    courseDuration:
+      "This Program is extend to Four semester each with duration six months.",
+  },
+  {
+    id: 8,
+    maniTitle: "Bachelor of Business Administration(B.B.A.)",
+    title: "BBA - Bachelor of Business Administration.",
+    img: "management.jpg",
+    name: "bba",
+    subjects: {
+      subjects: [],
+      semester: [
+        {
+          id: 1,
+          title: "Semester-1",
+          subjects: [
+            "Communication Skill",
+            "Micro Economics",
+            "Business Maths",
+            "Fundamental of Management",
+            "Office Automation",
+            "Accounting",
+            "FBO",
+            "Environmental Science",
+          ],
+        },
+        {
+          id: 2,
+          title: "Semester-2",
+          subjects: [
+            "Conversional English",
+            "Micro Economics",
+            "Advance Techniques of Business Mathematics",
+            "Emerging Trends in Contemporary Management",
+            "Business Accounting",
+            "E-Commerce",
+            "IT Tools for Business",
+            "Practical Studies",
+          ],
+        },
+        {
+          id: 3,
+          title: "Semester-3",
+          subjects: [
+            "Personality Development & Communication Skills",
+            "Managerial Economics",
+            "Business Statistics",
+            "Entrepreneurship Development",
+            "Principles of Marketing",
+            "Human Resource Management",
+            "Financial Management",
+            "Corporate Accounting",
+          ],
+        },
+        {
+          id: 4,
+          title: "Semester-4",
+          subjects: [
+            "Corporate Communication",
+            "Economics for DecisionMaking",
+            "Statistics For BusinessDecisions",
+            "Contemporary Issues in Marketing",
+            "Organization Behavior",
+            "Corporate Finance",
+            "Advanced Corporate Accounting",
+            "Practical Studies",
+          ],
+        },
+        {
+          id: 5,
+          title: "Semester-5",
+          subjects: [
+            "Business Environment",
+            "Business Law",
+            "Production & Operation Management",
+            "Direct Taxes",
+            "Ethics and Corporate Social Responsibility",
+            "Cost Accounting",
+            "Marketing Group- Advance Marketing",
+            "Finance Group- Investment Banking & Financial Services",
+          ],
+        },
+        {
+          id: 6,
+          title: "Semester-6",
+          subjects: [
+            "Business Policy & Strategy",
+            "Legal Aspects of Business",
+            "Tax Planning & Management",
+            "Financial Institutions & Market",
+            "Management Accounting",
+            "Practical Studies",
+            "Marketing Group- Retail Management",
+            "Finance Group- Security analysis & Portfolio Management",
+          ],
+        },
+      ],
+    },
+
+    description: `It is one of the most popular bachelor degree programmes after class XII. The 3-year professional undergraduate course in Business Management is open to students from all the three streams: Science, Arts and Commerce. The BBA course is the gateway to numerous job opportunities in a plethora of sectors like marketing, education, finance, sales, and government to name just a few.
+    The BBA course offers knowledge and training in management and leadership skills, to prepare them for managerial roles and entrepreneurship. During the tenure of the course, candidates learn various aspects of business administration and management through class room lectures and practical projects like internship.`,
+    eligibility:
+      "Bachelor of Business Administration requires a candidate to have passed HSC (10+2) exam from any stream as passing subject with minimum 45% marks at 12th standard.",
+    futureScope: [
+      "Human Resource Executive",
+      "Marketing Executive",
+      "Sales Executive",
+      "Marketing Manager",
+    ],
+    afterThisCourse: `The BBA is an undergraduate degree course in computer applications for duration of 3 years. After completing BBA, a student can go for M.B.A., M.Com, which is a master course in Management.
+    Apart from these options candidates are informed that after completing their BA course they become eligible to appear for government exams.`,
+    courseDuration:
+      "This Program is extend to six semester each with duration six months",
+  },
+];
+
+export const NccGaleryData = [
+  {
+    id: 1,
+    img: "ncc1.jpg",
+    title: "Firing Demonstration",
+  },
+  {
+    id: 2,
+    img: "ncc2.jpg",
+    title: "Firing At Dhrangadhra Military Camp",
+  },
+  {
+    id: 3,
+    img: "ncc3.jpg",
+    title: "Ncc Cadets",
+  },
+  {
+    id: 4,
+    img: "ncc4.jpg",
+    title: "Social Activity by NCC Cadets",
+  },
+  {
+    id: 5,
+    img: "ncc5.jpg",
+    title: "Traffic Awarness",
+  },
+  {
+    id: 6,
+    img: "ncc6.jpg",
+    title: "At Parade Ground",
+  },
+];
+export const NssGaleryData = [
+  {
+    id: 1,
+    img: "nss1.jpg",
+    title: "2nd Oct Activities",
+  },
+  {
+    id: 2,
+    img: "nss2.jpg",
+    title: "NSS Students",
+  },
+  {
+    id: 3,
+    img: "nss3.jpg",
+    title: "Youth Parliament Programme",
+  },
+  {
+    id: 4,
+    img: "nss4.jpg",
+    title: "Youth Parliament Programme Certificate Distribution",
+  },
+  {
+    id: 5,
+    img: "nss5.jpg",
+    title: "Swachhata Abhiyan By Students",
+  },
+  {
+    id: 6,
+    img: "nss6.jpg",
+    title: "Swachhata Abhiyan By Students",
+  },
+];
+
+export const GalleryData = [
+  {
+    id: 1,
+    title: "Annual Function",
+    folderPath: "/gallery/Annual_function",
+    images: [
+      { id: 1, img: "f1.jpg", title: "", isBig: false },
+      { id: 2, img: "f2.jpg", title: "", isBig: false },
+      { id: 3, img: "f3.jpg", title: "", isBig: false },
+      { id: 4, img: "f4.jpg", title: "", isBig: false },
+      { id: 5, img: "f5.jpg", title: "", isBig: false },
+      { id: 6, img: "f6.jpg", title: "", isBig: false },
+    ],
+  },
+  {
+    id: 1,
+    title: "Tour",
+    folderPath: "/gallery/Tour",
+    images: [
+      { id: 1, img: "tour1.jpg", title: "Rajashthan Tour", isBig: false },
+      { id: 2, img: "tour2.jpg", title: "Delhi Tour", isBig: false },
+      { id: 3, img: "tour3.jpg", title: "Mumbai Tour", isBig: false },
+      {
+        id: 4,
+        img: "tour4.jpg",
+        title: "Industrial visit At AdaniPort-Mundra",
+        isBig: true,
+      },
+      {
+        id: 5,
+        img: "tour5.jpg",
+        title: "Industrial visit At AdaniPort-Mundra",
+        isBig: true,
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Other Activities",
+    folderPath: "/gallery/Other",
+    images: [
+      { id: 1, img: "o1.jpg", title: "Addiction Free Seminar", isBig: false },
+      { id: 2, img: "o2.jpg", title: "Carrier Guide Seminar", isBig: false },
+      { id: 3, img: "o3.jpg", title: "Carrier Guide Seminar", isBig: false },
+      {
+        id: 4,
+        img: "o4.jpg",
+        title: "Teacher's Day",
+        isBig: true,
+      },
+      {
+        id: 5,
+        img: "o5.jpg",
+        title: "Picnic -Nal Sarovar",
+        isBig: true,
+      },
+    ],
   },
 ];

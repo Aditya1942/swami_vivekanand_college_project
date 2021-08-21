@@ -37,10 +37,10 @@ const HeaderMenu = () => {
                             <Link to="/NCC">{"NCC & NSS"}</Link>
                             <ul className="submenu">
                               <li>
-                                <Link to="/NCC">NCC</Link>
+                                <Link to="/ncc">NCC</Link>
                               </li>
                               <li>
-                                <Link to="/NSS">NSS</Link>
+                                <Link to="/nss">NSS</Link>
                               </li>
                             </ul>
                           </li>

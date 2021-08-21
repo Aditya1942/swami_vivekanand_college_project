@@ -8,6 +8,9 @@ import { CoursesList } from "./Database";
 import Courses from "./screens/Courses/Courses";
 import { Route, Switch } from "react-router-dom";
 import CourseDetails from "./screens/Courses/CourseDetails";
+import Ncc from "./screens/Ncc&Nss/Ncc";
+import Nss from "./screens/Ncc&Nss/Nss";
+import Gallery from "./screens/Gallery";
 
 function Router() {
   const [open, setOpen] = useState(true);
@@ -29,6 +32,9 @@ function Router() {
           <Route path="/" component={Home} exact />
           <Route exact path="/courses" component={Courses} />
           <Route path="/courses/:courseName" component={CourseDetails} />
+          <Route exact path="/ncc" component={Ncc} />
+          <Route exact path="/nss" component={Nss} />
+          <Route exact path="/gallery" component={Gallery} />
         </Switch>
 
         <Footer />
