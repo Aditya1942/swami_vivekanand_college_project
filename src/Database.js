@@ -768,6 +768,225 @@ export const CourseDetailData = [
   },
 ];
 
+export const SyllabusCoursesList = [
+  {
+    id: 1,
+    title: "Computer Science",
+    img: "cs.jpg",
+
+    subCourse: [
+      {
+        id: 1,
+        maniTitle: "B.C.A.",
+        title: "B.C.A.",
+        name: "bca",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bca/BCA%20SEM-1%20&%202.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bca/BCA%20SEM-3%20%20&%204.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bca/BCA%20SEM-5%20&%206.pdf",
+        ],
+      },
+      {
+        id: 2,
+        maniTitle: "B.SC.(IT)",
+        title: "B.SC.(IT)",
+        name: "bcsit",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bscit/BSC-IT%20SEM-1%20&%202.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bscit/BSC-IT%20SEM-3%20&%204.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bscit/BSC-IT%20SEM-5%20&%206.pdf",
+        ],
+      },
+      {
+        id: 3,
+        maniTitle: "M.SC.(IT & CS)",
+        title: "M.SC.(IT & CS)",
+        name: "mscit",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/mscit/MSC-IT%20SEM-1%20&%202.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/mscit/MSC-IT%20SEM-3%20&%204.pdf",
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Science",
+    img: "science.jpg",
+    subCourse: [
+      {
+        id: 1,
+        maniTitle: "Bachelor of Science(B.Sc)",
+        title: "Bachelor of Science(B.Sc)",
+        name: "bsc",
+        pdfs: [],
+      },
+      {
+        id: 2,
+        maniTitle: "Bachelor of Science(B.Sc)",
+        title: "Chemistry",
+        name: "bsc",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-12/B.%20SC.%20Chemistry.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-34/BSC%20SEM-3%20&%204%20CHEMISTRY.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-56/BSC%20CHEMISTRY%20SEM-6%20ALL.pdf",
+        ],
+      },
+      {
+        id: 3,
+        maniTitle: "Bachelor of Science(B.Sc)",
+        title: "Physics",
+        name: "bsc",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-12/B_Sc_%20Physics.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-34/BSC%20SEM-3%20&%204%20PHYSICS.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-56/Physics%20sem%205%20&%206.pdf",
+        ],
+      },
+      {
+        id: 4,
+        maniTitle: "Bachelor of Science(B.Sc)",
+        title: "Mathematics",
+        name: "bsc",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-12/B_Sc_%20Mathematics.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-34/BSC%20SEM-3%20&%204%20MATHS.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-56/Maths%20sem%205%20&%206.pdf",
+        ],
+      },
+      {
+        id: 5,
+        maniTitle: "Bachelor of Science(B.Sc)",
+        title: "Micro Biology",
+        name: "bsc",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-12/B_Sc_%20Microbiology.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-34/BSC%20SEM-3%20&%204%20MICRO.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bsc/sem-56/Micro%20Sem%20-%20V%20&%20VI.pdf",
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Arts",
+    img: "arts.jpg",
+
+    subCourse: [
+      {
+        id: 1,
+        maniTitle: "Bachelor of Arts(B.A.)",
+        title: "Bachelor of Arts(B.A.)",
+        name: "ba",
+        pdfs: [],
+      },
+      {
+        id: 2,
+        maniTitle: "Bachelor of Arts(B.A.)",
+        title: "English",
+        name: "ba",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%201-2/B.%20A.%20(English)%202019.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%203-4/B.%20A.%20(English)%202019.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/B.%20A.%20(English)%202019.pdf",
+        ],
+      },
+      {
+        id: 3,
+        maniTitle: "Bachelor of Arts(B.A.)",
+        title: "History",
+        name: "ba",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%201-2/HISTORY%20SEM-1%20Syllabus%202019-20.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%203-4/histri%20S.Y.B.A.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/HISTORY%20B.A.%20SEM%201%20TO%206%20SYLLABUS%20JUNE%20-%202019.pdf",
+        ],
+      },
+      {
+        id: 4,
+        maniTitle: "Bachelor of Arts(B.A.)",
+        title: "Gujarati",
+        name: "ba",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%201-2/GUJARATI%20SEM%201-2%202019.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%203-4/Gujarati%20(Sem%201%20to%206)%20new.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/Gujarati%20(Sem%201%20to%206)%20new.pdf",
+        ],
+      },
+      {
+        id: 5,
+        maniTitle: "Bachelor of Arts(B.A.)",
+        title: "Economics",
+        name: "ba",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%201-2/BA%20ECONOMICS%20%20SEM%201%20&%202%20-%20%202019.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%203-4/B.A.ECONOMICS%20SEM%203%20TO%206.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/B.A.ECONOMICS%20SEM%203%20TO%206.pdf",
+        ],
+      },
+      {
+        id: 6,
+        maniTitle: "Bachelor of Arts(B.A.)",
+        title: "Hindi",
+        name: "ba",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%201-2/B.A.%20HINDI%20SEM%201-2.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/sem%203-4/Hindi%20B.A.%20sem%203-4.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/ba/B.A.%20hindi%20COURSE-2019sem.5%20&%206.pdf",
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Commerce",
+    img: "commerce.jpg",
+
+    subCourse: [
+      {
+        id: 1,
+        maniTitle: "Bachelor of Commerce(B.COM)",
+        title: "Bachelor of Commerce(B.COM)",
+        name: "bcom",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bcom/BCOM%20SEM-1%20TO%204.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bcom/B.Com.%20Sem.3%20-%204%20(From%202019).pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bcom/B_Com_%20Sem_5-6.pdf",
+        ],
+      },
+      {
+        id: 2,
+        maniTitle: "Master of Commerce(M.COM)",
+        title: "Master of Commerce(M.COM)",
+        name: "mcom",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/mcom/M-Com-2019.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/mcom/M.Com.%20Semester%203%20and%204.pdf",
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Management",
+    img: "management.jpg",
+
+    subCourse: [
+      {
+        id: 1,
+        maniTitle: "Bachelor of Business Administration(B.B.A.)",
+        title: "Bachelor of Business Administration(B.B.A.)",
+        name: "bba",
+        pdfs: [
+          "http://swamivivekanandcollege.in/SYLLABUS/bba/BBA%20SEM-1%20TO%206.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bba/sem%203-4/BBA%20Syllabus%20-%202019%20_Sem%20III%20to%20VI.pdf",
+          "http://swamivivekanandcollege.in/SYLLABUS/bba/BBA%20Syllabus%20-%202019%20_Sem%20III%20to%20VI",
+        ],
+      },
+    ],
+  },
+];
+
 export const NccGaleryData = [
   {
     id: 1,

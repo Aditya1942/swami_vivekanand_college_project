@@ -33,50 +33,6 @@ const Courses = () => {
                   />
                 </div>
               ))}
-
-              {/* <div className="col-lg-4">
-                <div className="properties properties2 mb-30">
-                  <div className="properties__card">
-                    <div className="properties__img overlay1">
-                      <a href="#">
-                        <img src="assets/img/gallery/featured2.png" alt />
-                      </a>
-                    </div>
-                    <div className="properties__caption">
-                      <p>User Experience</p>
-                      <h3>
-                        <a href="#">Fundamental of UX for Application design</a>
-                      </h3>
-                      <p>
-                        The automated process all your website tasks. Discover
-                        tools and techniques to engage effectively with
-                        vulnerable children and young people.
-                      </p>
-                      <div className="properties__footer d-flex justify-content-between align-items-center">
-                        <div className="restaurant-name">
-                          <div className="rating">
-                            <i className="fas fa-star" />
-                            <i className="fas fa-star" />
-                            <i className="fas fa-star" />
-                            <i className="fas fa-star" />
-                            <i className="fas fa-star-half" />
-                          </div>
-                          <p>
-                            <span>(4.5)</span> based on 120
-                          </p>
-                        </div>
-                        <div className="price">
-                          <span>$135</span>
-                        </div>
-                      </div>
-                      <a href="#" className="border-btn border-btn2">
-                        Find out more
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               */}
             </div>
           </div>
         </div>

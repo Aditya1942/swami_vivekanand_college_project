@@ -11,6 +11,8 @@ import CourseDetails from "./screens/Courses/CourseDetails";
 import Ncc from "./screens/Ncc&Nss/Ncc";
 import Nss from "./screens/Ncc&Nss/Nss";
 import Gallery from "./screens/Gallery";
+import Academic from "./screens/Academic/Academic";
+import Syllabus from "./screens/Academic/Syllabus";
 
 function Router() {
   const [open, setOpen] = useState(true);
@@ -35,6 +37,8 @@ function Router() {
           <Route exact path="/ncc" component={Ncc} />
           <Route exact path="/nss" component={Nss} />
           <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/academic" component={Academic} />
+          <Route exact path="/syllabus" component={Syllabus} />
         </Switch>
 
         <Footer />

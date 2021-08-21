@@ -18,7 +18,6 @@ const CourseComponent = ({ title, img, subCourse }) => {
               <Link
                 to={{
                   pathname: `/courses/${item.name}`,
-                  state: { id: item.id, title: item.maniTitle, img: img },
                 }}
               >
                 {item.title}
