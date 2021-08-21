@@ -13,6 +13,7 @@ import Nss from "./screens/Ncc&Nss/Nss";
 import Gallery from "./screens/Gallery";
 import Academic from "./screens/Academic/Academic";
 import Syllabus from "./screens/Academic/Syllabus";
+import About from "./screens/About";
 
 function Router() {
   const [open, setOpen] = useState(true);
@@ -39,6 +40,7 @@ function Router() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/academic" component={Academic} />
           <Route exact path="/syllabus" component={Syllabus} />
+          <Route exact path="/about" component={About} />
         </Switch>
 
         <Footer />
