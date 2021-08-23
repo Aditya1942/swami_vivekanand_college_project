@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutArea4 = () => {
+const AboutArea5 = () => {
   return (
     <section className="about-area3 fix">
       <div className="support-wrapper align-items-center">
@@ -55,4 +55,4 @@ const AboutArea4 = () => {
   );
 };
 
-export default AboutArea4;
+export default AboutArea5;

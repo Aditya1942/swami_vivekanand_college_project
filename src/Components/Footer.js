@@ -8,20 +8,26 @@ const Footer = () => {
         <div className="footer-area footer-padding">
           <div className="container">
             <div className="row justify-content-between">
-              <div className="col-xl-4 col-lg-5 col-md-4 col-sm-6">
+              <div className="col-xl-5 col-lg-5 col-md-4 col-sm-6">
                 <div className="single-footer-caption mb-50">
                   <div className="single-footer-caption mb-30">
                     {/* logo */}
                     <div className="footer-logo mb-25">
                       <a href="index.html">
-                        <img src="assets/img/logo/logo2_footer.png" alt />
+                        <img
+                          src={process.env.PUBLIC_URL + "/img/logo_footer.jpg"}
+                          alt=""
+                        />
+                        <span>
+                          SHREE SWAMI VIVEKANAND COLLEGE- SURENDRANAGAR
+                        </span>
                       </a>
                     </div>
                     <div className="footer-tittle">
                       <div className="footer-pera">
                         <p>
-                          The automated process starts as soon as your clothes
-                          go into the machine.
+                          <span class="fa fa-map-marker mr-2"></span> Opp. I. T.
+                          I. , Nr S. T. Stand, Surendranagar-363001, Gujarat
                         </p>
                       </div>
                     </div>
@@ -30,7 +36,7 @@ const Footer = () => {
                       <a href="#">
                         <i className="fab fa-twitter" />
                       </a>
-                      <a href="https://bit.ly/sai4ull">
+                      <a href="#">
                         <i className="fab fa-facebook-f" />
                       </a>
                       <a href="#">
@@ -43,70 +49,28 @@ const Footer = () => {
               <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5">
                 <div className="single-footer-caption mb-50">
                   <div className="footer-tittle">
-                    <h4>Our solutions</h4>
+                    <h4>Email </h4>
                     <ul>
                       <li>
-                        <a href="#">Design &amp; creatives</a>
-                      </li>
-                      <li>
-                        <a href="#">Telecommunication</a>
-                      </li>
-                      <li>
-                        <a href="#">Restaurant</a>
-                      </li>
-                      <li>
-                        <a href="#">Programing</a>
-                      </li>
-                      <li>
-                        <a href="#">Architecture</a>
+                        <p>
+                          <span class="fa fa-envelope-open mr-2"></span>
+                          sv.college@yahoo.in
+                        </p>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div className="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+              <div className="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                 <div className="single-footer-caption mb-50">
                   <div className="footer-tittle">
-                    <h4>Support</h4>
+                    <h4>Contact no </h4>
                     <ul>
                       <li>
-                        <a href="#">Design &amp; creatives</a>
-                      </li>
-                      <li>
-                        <a href="#">Telecommunication</a>
-                      </li>
-                      <li>
-                        <a href="#">Restaurant</a>
-                      </li>
-                      <li>
-                        <a href="#">Programing</a>
-                      </li>
-                      <li>
-                        <a href="#">Architecture</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                <div className="single-footer-caption mb-50">
-                  <div className="footer-tittle">
-                    <h4>Company</h4>
-                    <ul>
-                      <li>
-                        <a href="#">Design &amp; creatives</a>
-                      </li>
-                      <li>
-                        <a href="#">Telecommunication</a>
-                      </li>
-                      <li>
-                        <a href="#">Restaurant</a>
-                      </li>
-                      <li>
-                        <a href="#">Programing</a>
-                      </li>
-                      <li>
-                        <a href="#">Architecture</a>
+                        <p>
+                          <span class="fa fa-phone mr-2"></span>+91 02752 23 33
+                          11.
+                        </p>
                       </li>
                     </ul>
                   </div>
@@ -124,11 +88,8 @@ const Footer = () => {
                   <div className="footer-copy-right text-center">
                     <p>
                       {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                      Copyright © All rights reserved | This template is made
-                      with <i className="fa fa-heart" aria-hidden="true" /> by{" "}
-                      <a href="https://colorlib.com" target="_blank">
-                        Colorlib
-                      </a>
+                      © {new Date().getFullYear()} SHREE SWAMI VIVEKANAND
+                      COLLEGE- SURENDRANAGAR. All rights reserved
                       {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                     </p>
                   </div>

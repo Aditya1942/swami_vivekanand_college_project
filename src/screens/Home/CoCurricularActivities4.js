@@ -1,11 +1,10 @@
 import React from "react";
-import CourseComponent from "../../Components/CourseComponent";
-import { CoursesList } from "../../Database";
+import { CoCurricularActivitiesData } from "../../Database";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const CoursesArea3 = () => {
+const CoCurricularActivities4 = () => {
   var settings = {
     dots: false,
     infinite: true,
@@ -52,25 +51,25 @@ const CoursesArea3 = () => {
     ],
   };
   return (
-    <div className="courses-area section-padding40 fix pb-1">
+    <div className="courses-area section-padding40 fix pt-1 ">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-7 col-lg-8">
             <div className="section-tittle text-center mb-55">
-              <h2>Our featured courses</h2>
+              <h2>Co-Curricular Activities</h2>
+              <h4>
+                {` (Tour,Annual Function,Picnic,Day Celebration,Student Development
+                Programme,Saurashtra Premiere Leauge Cricket Tournament,Sports
+                Activity)`}
+              </h4>
             </div>
           </div>
         </div>
         <Slider {...settings}>
           {/* <div className="courses-actives"> */}
           {/* Course */}
-          {CoursesList.map((course, index) => (
-            <CourseComponent
-              key={course.id}
-              title={course.title}
-              img={course.img}
-              subCourse={course.subCourse}
-            />
+          {CoCurricularActivitiesData.map((course, index) => (
+            <IMAGE key={course.id} img={course.img} />
           ))}
           {/* Course */}
           {/* </div> */}
@@ -79,5 +78,24 @@ const CoursesArea3 = () => {
     </div>
   );
 };
+const IMAGE = ({ img }) => {
+  let imgUrl = `${process.env.PUBLIC_URL}/img/CoCurricularActivities/${img}`;
+  return (
+    <div className="properties pb-10">
+      <div className="properties__card">
+        <div className="properties__img overlay1">
+          <b>
+            <img
+              className="single-gallery-image"
+              height={220}
+              src={imgUrl}
+              alt=""
+            />
+          </b>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default CoursesArea3;
+export default CoCurricularActivities4;
