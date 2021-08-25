@@ -27,12 +27,18 @@ const Gallery = () => {
                     return (
                       <div className={image.isBig ? "col-md-6" : "col-md-4"}>
                         <span className="img-pop-up">
-                          <div
-                            className="single-gallery-image"
-                            style={{
-                              background: `url(${imgurl})`,
-                            }}
-                          />
+                          <a
+                            href={imgurl}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <div
+                              className="single-gallery-image"
+                              style={{
+                                background: `url(${imgurl})`,
+                              }}
+                            />
+                          </a>
                         </span>
                         <div className="typography mt-3">
                           <h2>{image.title}</h2>

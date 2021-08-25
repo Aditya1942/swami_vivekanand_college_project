@@ -7,10 +7,12 @@ const NccGallery = ({ title, img }) => {
   return (
     <div className="col-md-4">
       <span className="img-pop-up">
-        <div
-          className="single-gallery-image"
-          style={{ background: `url(${imgUrl})` }}
-        />
+        <a href={imgUrl} rel="noopener noreferrer" target="_blank">
+          <div
+            className="single-gallery-image"
+            style={{ background: `url(${imgUrl})` }}
+          />
+        </a>
       </span>
       <div className="typography mt-3">
         <h2>{title}</h2>
