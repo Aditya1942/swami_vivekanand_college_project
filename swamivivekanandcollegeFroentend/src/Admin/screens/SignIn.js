@@ -15,6 +15,7 @@ import Container from "@material-ui/core/Container";
 import { useHistory, useLocation } from "react-router";
 import { authContext, useAuth } from "../hooks/useAuth";
 import axios from "axios";
+import useAlertMsg from "../hooks/useAlertMsg";
 
 function Copyright() {
   return (
@@ -55,6 +56,7 @@ export default function SignIn() {
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/admin" } };
   let auth = useAuth();
+  let AlertMsg = useAlertMsg();
   const [Username, setUsername] = useState("");
   const [Password, setPassword] = useState("");
   useEffect(() => {
@@ -67,33 +69,7 @@ export default function SignIn() {
   }, []);
   let login = () => {
     console.log(Username, Password);
-    // fetch("http://localhost:3001/api/auth/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     username: Username,
-    //     password: Password,
-    //   }),
-    // })
-    //   .then((res) => {
-    //     console.log(res);
-    //     return res.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
-    // axios({
-    //   method: "post",
-    //   url: "http://localhost:3001/api/auth/login",
-    //   data: {
-    //     username: Username,
-    //     password: Password,
-    //   },
-    // }).then((res) => {
-    //   console.log(res.data);
-    // });
+    console.log(AlertMsg);
 
     axios
       .post("/auth/login", {
@@ -101,12 +77,16 @@ export default function SignIn() {
         password: Password,
       })
       .then((res) => {
-        console.log("line 76", res);
         if (res?.data?.success) {
           auth.setAuthData(res.data.token, () => {
             console.log(auth);
+            AlertMsg.Show("success", "Login Successfully");
             history.replace(from);
           });
+        } else if (res.status === 404) {
+          AlertMsg.Show("error", "User Not Found");
+        } else if (res.status === 400) {
+          AlertMsg.Show("error", "Invalid Password");
         }
       })
       .catch((err) => {

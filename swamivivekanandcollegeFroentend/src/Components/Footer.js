@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -91,6 +92,13 @@ const Footer = () => {
                       {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                       © {new Date().getFullYear()} SHREE SWAMI VIVEKANAND
                       COLLEGE- SURENDRANAGAR. All rights reserved
+                      <Link to="/admin">
+                        <span
+                          style={{ marginLeft: "10px", color: "transparent" }}
+                        >
+                          Admin
+                        </span>
+                      </Link>
                       {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                     </p>
                   </div>

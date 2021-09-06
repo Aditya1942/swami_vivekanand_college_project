@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import AdminRouter from "./Admin/AdminRouter";
+import AlertMsg from "./Admin/components/AlertMsg";
 import { ProvideAuth } from "./Admin/hooks/useAuth";
 import Approuter from "./Approuter";
 import { CoursesList } from "./Database";
@@ -72,7 +73,9 @@ function Router() {
 
       <Route path="/admin">
         <ProvideAuth>
-          <AdminRouter />
+          <AlertMsg>
+            <AdminRouter />
+          </AlertMsg>
         </ProvideAuth>
       </Route>
     </Switch>

@@ -3,6 +3,7 @@
 # dependencies
 swamivivekanandcollegeFroentend/node_modules
 swamivivekanandcollegeBackend/node_modules
+node_modules
 swamivivekanandcollegeBackend/.env
 /.pnp
 .pnp.js

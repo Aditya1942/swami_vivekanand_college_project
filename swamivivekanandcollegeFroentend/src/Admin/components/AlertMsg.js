@@ -1,18 +1,24 @@
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
-const AlertMsg = () => {
-  const [open, setOpen] = React.useState(false);
+export const MsgContext = createContext({});
 
-  const handleClick = () => {
+const AlertMsg = ({ children }) => {
+  const [open, setOpen] = React.useState(false);
+  const [Type, setType] = useState(null);
+  const [Message, setMessage] = useState("");
+
+  const Show = (type = "success", message = "This is a success message!") => {
     setOpen(true);
+    setType(type);
+    setMessage(message);
   };
 
-  const handleClose = (event, reason) => {
+  const Hide = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -21,13 +27,16 @@ const AlertMsg = () => {
   };
 
   return (
-    <div>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          This is a success message!
-        </Alert>
-      </Snackbar>
-    </div>
+    <MsgContext.Provider value={{ Show, Hide }}>
+      <div>
+        <Snackbar open={open} autoHideDuration={6000} onClose={Hide}>
+          <Alert onClose={Hide} severity={Type}>
+            {Message}
+          </Alert>
+        </Snackbar>
+      </div>
+      {children}
+    </MsgContext.Provider>
   );
 };
 
