@@ -26,8 +26,9 @@ const Footer = () => {
                     <div className="footer-tittle">
                       <div className="footer-pera">
                         <p>
-                          <span class="fa fa-map-marker mr-2"></span> Opp. I. T.
-                          I. , Nr S. T. Stand, Surendranagar-363001, Gujarat
+                          <span className="fa fa-map-marker mr-2"></span> Opp.
+                          I. T. I. , Nr S. T. Stand, Surendranagar-363001,
+                          Gujarat
                         </p>
                       </div>
                     </div>
@@ -53,7 +54,7 @@ const Footer = () => {
                     <ul>
                       <li>
                         <p>
-                          <span class="fa fa-envelope-open mr-2"></span>
+                          <span className="fa fa-envelope-open mr-2"></span>
                           sv.college@yahoo.in
                         </p>
                       </li>
@@ -68,8 +69,8 @@ const Footer = () => {
                     <ul>
                       <li>
                         <p>
-                          <span class="fa fa-phone mr-2"></span>+91 02752 23 33
-                          11.
+                          <span className="fa fa-phone mr-2"></span>+91 02752 23
+                          33 11.
                         </p>
                       </li>
                     </ul>

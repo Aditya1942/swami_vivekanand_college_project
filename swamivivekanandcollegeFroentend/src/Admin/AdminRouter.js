@@ -1,15 +1,27 @@
-import React from "react";
-import { Route, Switch, useRouteMatch } from "react-router";
+import React, { useEffect } from "react";
+import { Route, Switch, useHistory, useRouteMatch } from "react-router";
 import AdminIndex from ".";
+import NavBar from "./components/NavBar";
+import SignIn from "./screens/SignIn";
+import { PrivateRoute, useAuth } from "./hooks/useAuth";
 
 const AdminRouter = () => {
-  let { path } = useRouteMatch();
+  let { path, url } = useRouteMatch();
 
   return (
     <div className="Admin">
       <Switch>
-        <Route path={path} component={AdminIndex} />
-        <Route exact path={`${path}/dashboard`} component={AdminIndex} />
+        <PrivateRoute exact path={path}>
+          <NavBar>
+            <AdminIndex />
+          </NavBar>
+        </PrivateRoute>
+        <PrivateRoute exact path={`${path}/dashboard`}>
+          <NavBar>
+            <AdminIndex />
+          </NavBar>
+        </PrivateRoute>
+        <Route exact path={`${path}/signIn`} component={SignIn} />
       </Switch>
     </div>
   );

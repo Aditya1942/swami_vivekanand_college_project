@@ -14,7 +14,7 @@ const AboutArea5 = () => {
           {/* section tittle */}
           <div className="section-tittle section-tittle2 mb-20">
             <div className="front-text">
-              <h2 className>Learner outcomes on courses you will take</h2>
+              <h2>Learner outcomes on courses you will take</h2>
             </div>
           </div>
           <div className="single-features">

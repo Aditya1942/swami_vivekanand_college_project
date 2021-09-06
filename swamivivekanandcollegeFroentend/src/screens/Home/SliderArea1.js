@@ -30,7 +30,10 @@ const SliderArea1 = () => {
                       rel="noreferrer"
                       className="btn hero-btn"
                     >
-                      <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                      <i
+                        className="fa fa-check-square-o"
+                        aria-hidden="true"
+                      ></i>
                       Admission Open{" "}
                     </a>
                   </div>
