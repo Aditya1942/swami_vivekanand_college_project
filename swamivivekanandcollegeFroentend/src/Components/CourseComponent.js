@@ -14,10 +14,10 @@ const CourseComponent = ({ title, img, subCourse }) => {
         <div className="properties__caption">
           <p>{title}</p>
           {subCourse.map((item, index) => (
-            <h3 key={item.id} className="mt-2">
+            <h3 key={item._id} className="mt-2">
               <Link
                 to={{
-                  pathname: `/courses/${item.name}`,
+                  pathname: `/courses/${item._id}`,
                 }}
               >
                 {item.title}

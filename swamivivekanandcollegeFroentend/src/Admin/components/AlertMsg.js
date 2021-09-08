@@ -9,13 +9,25 @@ export const MsgContext = createContext({});
 
 const AlertMsg = ({ children }) => {
   const [open, setOpen] = React.useState(false);
-  const [Type, setType] = useState(null);
+  const [Type, setType] = useState("success");
   const [Message, setMessage] = useState("");
 
   const Show = (type = "success", message = "This is a success message!") => {
     setOpen(true);
     setType(type);
     setMessage(message);
+  };
+  const success = (message = "This is a success message!") => {
+    Show("success", message);
+  };
+  const error = (message = "This is an error message!") => {
+    Show("error", message);
+  };
+  const warning = (message = "This is a warning message!") => {
+    Show("warning", message);
+  };
+  const info = (message = "This is an info message!") => {
+    Show("info", message);
   };
 
   const Hide = (event, reason) => {
@@ -27,12 +39,14 @@ const AlertMsg = ({ children }) => {
   };
 
   return (
-    <MsgContext.Provider value={{ Show, Hide }}>
+    <MsgContext.Provider value={{ Show, Hide, success, error, warning, info }}>
       <div>
         <Snackbar open={open} autoHideDuration={6000} onClose={Hide}>
-          <Alert onClose={Hide} severity={Type}>
-            {Message}
-          </Alert>
+          <>
+            <Alert onClose={Hide} severity={Type}>
+              {Message}
+            </Alert>
+          </>
         </Snackbar>
       </div>
       {children}

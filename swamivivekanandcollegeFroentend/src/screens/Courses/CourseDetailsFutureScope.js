@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./css/style.css";
 
 const CourseDetailsFutureScope = ({ futureScope, courseDuration }) => {
   console.log(futureScope);
@@ -20,7 +21,9 @@ const CourseDetailsFutureScope = ({ futureScope, courseDuration }) => {
                 <ul className="ordered-list">
                   {futureScope &&
                     futureScope.map((item, index) => (
-                      <li className="sample-text ">{item}</li>
+                      <li key={index} className="sample-text">
+                        {item}
+                      </li>
                     ))}
                 </ul>
               </div>

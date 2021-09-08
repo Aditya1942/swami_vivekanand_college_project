@@ -15,7 +15,7 @@ const NavBar = ({ children }) => {
   };
   return (
     <div>
-      <nav className="navbar navbar-expand-lg  navbar-light">
+      <nav className="navbar navbar-expand-lg  ">
         <a className="navbar-brand" href="#">
           Dashboard
         </a>
@@ -69,7 +69,11 @@ const NavBar = ({ children }) => {
               </div>
             </li>
           </ul>
-          <Button onClick={LogOut} startIcon={<ExitToAppIcon />}>
+          <Button
+            color="inherit"
+            onClick={LogOut}
+            startIcon={<ExitToAppIcon />}
+          >
             LogOut
           </Button>
         </div>

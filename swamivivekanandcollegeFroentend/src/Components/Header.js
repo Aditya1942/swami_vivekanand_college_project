@@ -21,7 +21,7 @@ const Header = ({ title, Breadcrumb, BreadcrumbLink }) => {
                         <Link to="/">Home</Link>
                       </li>
                       {Breadcrumb.map((item, index) => (
-                        <li className="breadcrumb-item">
+                        <li className="breadcrumb-item" key={index}>
                           <Link to={BreadcrumbLink[index]}>{item}</Link>
                         </li>
                       ))}

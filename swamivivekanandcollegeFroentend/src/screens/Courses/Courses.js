@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CourseComponent from "../../Components/CourseComponent";
 import Header from "../../Components/Header";
-import { CoursesList } from "../../Database";
+import axios from "axios";
+import { CourseDetailData } from "../../Database";
+import "./css/style.css";
 
 const Courses = () => {
+  const [CoursesList, setCoursesList] = useState([]);
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+    axios({
+      url: "/courses",
+      method: "get",
+      dataType: "json",
+      cancelToken: source.token,
+    }).then((data) => {
+      setCoursesList(data.data);
+      console.log(data.data);
+    });
+    console.log(CourseDetailData);
+    return () => {
+      source.cancel("hey yo! going too fast. take it easy");
+    };
+  }, []);
   return (
     <main>
       <Header
@@ -23,10 +42,9 @@ const Courses = () => {
               </div>
             </div>
             <div className="row">
-              {CoursesList.map((course, index) => (
-                <div className="col-lg-4">
+              {CoursesList?.map((course, index) => (
+                <div className="col-lg-4" key={course._id}>
                   <CourseComponent
-                    key={course.id}
                     title={course.title}
                     img={course.img}
                     subCourse={course.subCourse}

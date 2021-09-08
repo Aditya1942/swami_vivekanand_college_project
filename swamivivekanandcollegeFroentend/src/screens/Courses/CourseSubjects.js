@@ -1,18 +1,21 @@
 import React from "react";
+import "./css/style.css";
 
 const CourseSubjects = ({ subjects = [], semesters = [] }) => {
-  console.log(semesters);
   return (
     <div
       className="section-top-border"
       style={{ paddingTop: "30px", paddingBottom: "10px" }}
     >
-      <h1 className="mb-30">Subjects</h1>
+      <h2 className="mb-30">Subjects</h2>
       {subjects.length > 0 ? (
         <div className="row">
           <div className="col-md-8">
             {subjects.map((subject, index) => (
-              <span href="#" className="genric-btn primary-border circle arrow">
+              <span
+                key={index}
+                className="genric-btn primary-border circle arrow"
+              >
                 {subject.toUpperCase()}
                 <span className="lnr lnr-arrow-right" />
               </span>
@@ -23,9 +26,9 @@ const CourseSubjects = ({ subjects = [], semesters = [] }) => {
         semesters.length > 0 && (
           <div className="row">
             {semesters.map((semester, index) => (
-              <div key={semester.id} className="col-md-4 pb-30">
+              <div key={index} className="col-md-4 pb-30">
                 <div className="single-defination">
-                  <h1 className="mb-20">{semester.title}</h1>
+                  <h2 className="mb-20">{semester.title}</h2>
                   <ul className="unordered-list">
                     {semester.subjects.map((subject, index) => (
                       <li style={{ lineHeight: "25px", marginBottom: "0px" }}>

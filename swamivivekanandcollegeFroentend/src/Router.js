@@ -30,7 +30,7 @@ function Router() {
           <Courses />
         </Approuter>
       </Route>
-      <Route path={`/courses/:courseName`}>
+      <Route path={`/courses/:courseId`}>
         <Approuter>
           <CourseDetails />
         </Approuter>

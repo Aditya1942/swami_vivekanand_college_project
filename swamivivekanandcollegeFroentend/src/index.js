@@ -5,8 +5,10 @@ import App from "./App";
 import axios from "axios";
 // import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+
+const BASE_URL = process.env.REACT_APP_API_URL;
 let token = localStorage.getItem("token");
-axios.defaults.baseURL = "http://localhost:3001/api";
+axios.defaults.baseURL = BASE_URL;
 axios.defaults.headers.common["Authorization"] = token;
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.validateStatus = function (status) {

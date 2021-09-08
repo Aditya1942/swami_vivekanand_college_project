@@ -80,13 +80,13 @@ export default function SignIn() {
         if (res?.data?.success) {
           auth.setAuthData(res.data.token, () => {
             console.log(auth);
-            AlertMsg.Show("success", "Login Successfully");
+            AlertMsg.success("Login Successfully");
             history.replace(from);
           });
         } else if (res.status === 404) {
-          AlertMsg.Show("error", "User Not Found");
+          AlertMsg.error("User Not Found");
         } else if (res.status === 400) {
-          AlertMsg.Show("error", "Invalid Password");
+          AlertMsg.error("Invalid Password");
         }
       })
       .catch((err) => {
@@ -159,9 +159,9 @@ export default function SignIn() {
             </Grid>
           </form>
         </div>
-        <Box mt={8}>
+        {/* <Box mt={8}>
           <Copyright />
-        </Box>
+        </Box> */}
       </Container>
     </>
   );

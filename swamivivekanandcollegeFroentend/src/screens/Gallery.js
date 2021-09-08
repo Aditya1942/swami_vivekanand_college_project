@@ -1,7 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import { GalleryData } from "../Database";
-
+function openImage(base64URL) {
+  var win = window.open();
+  win.document
+    .write(`<iframe src=" ${base64URL}" frameborder="0" style="border:0; 
+ top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen> 
+ </iframe>`);
+}
 const Gallery = () => {
   return (
     <div className="gallery">
@@ -27,10 +34,9 @@ const Gallery = () => {
                     return (
                       <div className={image.isBig ? "col-md-6" : "col-md-4"}>
                         <span className="img-pop-up">
-                          <a
-                            href={imgurl}
-                            rel="noopener noreferrer"
-                            target="_blank"
+                          <span
+                            // href={imgurl}
+                            onClick={() => openImage(imgurl)}
                           >
                             <div
                               className="single-gallery-image"
@@ -38,10 +44,10 @@ const Gallery = () => {
                                 background: `url(${imgurl})`,
                               }}
                             />
-                          </a>
+                          </span>
                         </span>
                         <div className="typography mt-3">
-                          <h2>{image.title}</h2>
+                          <h5>{image.title}</h5>
                         </div>
                       </div>
                     );

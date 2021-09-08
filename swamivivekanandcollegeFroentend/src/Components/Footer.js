@@ -19,7 +19,7 @@ const Footer = () => {
                           src={process.env.PUBLIC_URL + "/img/logo_footer.jpg"}
                           alt=""
                         />
-                        <span>
+                        <span style={{ fontSize: "14px" }}>
                           SHREE SWAMI VIVEKANAND COLLEGE- SURENDRANAGAR
                         </span>
                       </a>

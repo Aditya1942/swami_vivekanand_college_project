@@ -25,9 +25,9 @@ const Contact = () => {
                       <img
                         src="/assets/img/logo/logo.jpg"
                         alt=""
-                        className="img-fluid mr-5"
+                        className="img-fluid mr-3"
                       />
-                      SHREE SWAMI VIVEKANAND COLLEGE
+                      <span className="h6">SHREE SWAMI VIVEKANAND COLLEGE</span>
                     </div>
                   </div>
                   <div className="row mt-5">

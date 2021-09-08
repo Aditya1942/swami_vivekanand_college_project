@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/style.css";
 
 const CourseDetailHeader = ({ title, description }) => {
   return (

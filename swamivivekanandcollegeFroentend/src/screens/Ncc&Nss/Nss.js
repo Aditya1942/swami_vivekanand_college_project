@@ -15,7 +15,7 @@ const NccGallery = ({ title, img }) => {
         </a>
       </span>
       <div className="typography mt-3">
-        <h2>{title}</h2>
+        <h5>{title}</h5>
       </div>
     </div>
   );

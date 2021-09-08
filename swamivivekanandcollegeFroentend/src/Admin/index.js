@@ -22,7 +22,11 @@ const AdminIndex = () => {
         console.log("Output: ", res);
       });
   };
-  return <div>Hello</div>;
+  return (
+    <>
+      <Dashboard />
+    </>
+  );
 };
 
 export default AdminIndex;
