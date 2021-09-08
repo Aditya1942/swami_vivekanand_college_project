@@ -2,6 +2,7 @@ import express from "express";
 import connectDB from "./config/db.js";
 import cors from "cors";
 import AuthRoute from "./routers/auth.js";
+import CoursesRoute from "./routers/Course.js";
 
 // config
 const app = express();
@@ -22,3 +23,4 @@ connectDB();
 //Define routes
 app.get("/api", (req, res) => res.send("Hello World!"));
 app.use("/api/auth", AuthRoute);
+app.use("/api/courses", CoursesRoute);

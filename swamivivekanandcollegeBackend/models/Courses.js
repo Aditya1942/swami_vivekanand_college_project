@@ -4,6 +4,10 @@ const Courses = new mongoose.Schema({
     type: String,
     required: true,
   },
+  img: {
+    type: String,
+    required: true,
+  },
   subCourse: [
     {
       maniTitle: {
@@ -27,5 +31,5 @@ const Courses = new mongoose.Schema({
   },
 });
 
-let CourseList = mongoose.model("courses", Courses);
+let CourseList = mongoose.model("Courses", Courses);
 export default CourseList;
