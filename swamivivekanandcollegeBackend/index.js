@@ -4,6 +4,7 @@ import cors from "cors";
 import AuthRoute from "./routers/auth.js";
 import CoursesRoute from "./routers/Course.js";
 import NssNccRoute from "./routers/NssNcc.js";
+import CoCurricularActivityRoute from "./routers/CoCurricularActivities.js";
 
 // config
 const app = express();
@@ -26,3 +27,4 @@ app.get("/api", (req, res) => res.send("Hello World!"));
 app.use("/api/auth", AuthRoute);
 app.use("/api/courses", CoursesRoute);
 app.use("/api", NssNccRoute);
+app.use("/api/CoCurricularActivity", CoCurricularActivityRoute);

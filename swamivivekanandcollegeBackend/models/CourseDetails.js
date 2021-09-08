@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const CourseDetails = new mongoose.Schema({
+const CourseDetailSchema = new mongoose.Schema({
   courseId: {
     type: String,
     required: true,
@@ -65,5 +65,5 @@ const CourseDetails = new mongoose.Schema({
   },
 });
 
-let CourseDetail = mongoose.model("CourseDetails", CourseDetails);
+let CourseDetail = mongoose.model("CourseDetails", CourseDetailSchema);
 export default CourseDetail;

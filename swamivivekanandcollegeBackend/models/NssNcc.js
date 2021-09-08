@@ -1,6 +1,6 @@
 import Mongoose from "mongoose";
 
-const NssNccData = new Mongoose.Schema({
+const NssNccSchema = new Mongoose.Schema({
   type: {
     type: String,
     required: true,
@@ -18,5 +18,5 @@ const NssNccData = new Mongoose.Schema({
     default: Date.now,
   },
 });
-let NssNcc = Mongoose.model("NssNcc", NssNccData);
+let NssNcc = Mongoose.model("NssNcc", NssNccSchema);
 export default NssNcc;

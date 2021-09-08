@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const Courses = new mongoose.Schema({
+const CoursesSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -31,5 +31,5 @@ const Courses = new mongoose.Schema({
   },
 });
 
-let CourseList = mongoose.model("Courses", Courses);
+let CourseList = mongoose.model("Courses", CoursesSchema);
 export default CourseList;
