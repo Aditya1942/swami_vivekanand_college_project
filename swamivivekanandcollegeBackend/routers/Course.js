@@ -1,11 +1,9 @@
 import express from "express";
-import jwt from "jsonwebtoken";
 import auth from "../midddleware/auth.js";
 import Courses from "../models/Courses.js";
 import CourseDetails from "../models/CourseDetails.js";
 
 const router = express.Router();
-const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 
 /**
  * @desc add course
