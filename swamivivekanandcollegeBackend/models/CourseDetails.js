@@ -1,9 +1,5 @@
 import mongoose from "mongoose";
 const CourseDetailSchema = new mongoose.Schema({
-  courseId: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: true,

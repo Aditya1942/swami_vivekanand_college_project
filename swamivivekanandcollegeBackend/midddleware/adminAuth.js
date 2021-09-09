@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import User from "../models/Users.js";
 const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 
 export default async function (req, res, next) {
@@ -19,7 +20,7 @@ export default async function (req, res, next) {
     });
 
     if (admin.isAdmin === false)
-      return res.status(401).json({
+      return res.status(403).json({
         msg: "Not authorized to access this functionality",
       });
 
@@ -27,6 +28,7 @@ export default async function (req, res, next) {
   } catch (err) {
     console.log(err);
     res.status(401).json({
+      err: err,
       msg: "Token is not valid",
     });
   }

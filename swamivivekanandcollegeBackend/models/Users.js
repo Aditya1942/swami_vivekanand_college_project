@@ -8,10 +8,18 @@ const UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
+    required: true,
+  },
+  fullname: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: Number,
+    required: true,
   },
   isAdmin: {
     type: Boolean,
-    default: false,
   },
   date: {
     type: Date,

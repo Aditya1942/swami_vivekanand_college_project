@@ -16,33 +16,47 @@ const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 router.post("/login", (req, res) => {
   const username = req.body.username;
   const userpassword = req.body.password;
-  const user = { username: username };
-  User.findOne({ username: username }).then((user) => {
-    if (!user) {
-      return res.status(404).json({ username: "User not found" });
-    }
-    console.log(user);
+  try {
+    User.findOne({ username: username })
+      .then((user) => {
+        if (!user) {
+          return res.status(404).json({ message: "User not found" });
+        }
+        console.log(user);
 
-    bcrypt.compare(userpassword, user.password).then((isMatch) => {
-      console.log(isMatch);
+        bcrypt.compare(userpassword, user.password).then((isMatch) => {
+          console.log(isMatch);
 
-      if (isMatch) {
-        jwt.sign(
-          { id: user.id },
-          jwtSecret,
-          { expiresIn: 3600 * 365 },
-          (err, token) => {
-            res.json({
-              success: true,
-              token: "Bearer " + token,
-            });
+          if (isMatch) {
+            jwt.sign(
+              { id: user.id },
+              jwtSecret,
+              { expiresIn: 3600 * 365 },
+              (err, token) => {
+                if (err) {
+                  res.status(500).json({ err: err, message: "Server error" });
+                }
+                res.json({
+                  success: true,
+                  token: "Bearer " + token,
+                });
+              }
+            );
+          } else {
+            return res.status(401).json({ message: "Password incorrect" });
           }
-        );
-      } else {
-        return res.status(400).json({ password: "Password incorrect" });
-      }
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json({ err: err, message: "Server error" });
+      });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      error,
     });
-  });
+  }
 });
 /**
  *@route    Post api/auth/signup
@@ -52,23 +66,30 @@ router.post("/login", (req, res) => {
 router.post("/signup", async (req, res) => {
   const username = req.body.username;
   const userpassword = await bcrypt.hash(req.body.password, 10);
-  const rollno = req.body.rollno;
   const phone = req.body.phone;
   const fullname = req.body.fullname;
   User.findOne({ username: username }).then((user) => {
     if (user) {
-      return res.status(400).json({ username: "User already exists" });
+      return res
+        .status(401)
+        .json({ message: "User already exists with same username" });
     } else {
       const newUser = new User({
         username: username,
         password: userpassword,
-        rollno: rollno,
         phone: phone,
         fullname: fullname,
+        isAdmin: false,
       });
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
-          if (err) throw err;
+          if (err) {
+            res.status(500)({
+              error: err,
+            });
+            // throw err;
+          }
+
           newUser.password = hash;
           newUser
             .save()
@@ -85,18 +106,35 @@ router.post("/signup", async (req, res) => {
                 }
               );
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+              res.status(500).json({
+                err,
+              });
+            });
         });
       });
     }
   });
 });
 /**
+ *@route    GET api/user/all
+ *@desc     Get all Users
+ *@access  Private only admin can access
+ */
+router.get("/user", adminAuth, async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+    res.send(users);
+  } catch (err) {
+    res.send(err);
+  }
+});
+/**
  *@route    GET api/user/:id
  *@desc     Get user by id
  *@access  Public
  */
-router.get("/user/:id", async (req, res) => {
+router.get("/user/:id", auth, async (req, res) => {
   try {
     const user = await User.findById(req.params.id).select("-password");
     res.send(user);
@@ -114,10 +152,11 @@ router.put("/user/:id", auth, async (req, res) => {
     const userBody = {
       username: req.body.username,
       password: await bcrypt.hash(req.body.password, 10),
-      rollno: req.body.rollno,
       phone: req.body.phone,
       fullname: req.body.fullname,
+      isAdmin: req.body.isAdmin,
     };
+    console.log(userBody);
     const user = await User.findByIdAndUpdate(req.params.id, userBody, {
       new: true,
       runValidators: true,
@@ -127,19 +166,7 @@ router.put("/user/:id", auth, async (req, res) => {
     res.send(err);
   }
 });
-/**
- *@route    GET api/user/all
- *@desc     Get all Users
- *@access  Private only admin can access
- */
-router.get("/all", adminAuth, async (req, res) => {
-  try {
-    const users = await User.find().select("-password");
-    res.send(users);
-  } catch (err) {
-    res.send(err);
-  }
-});
+
 /**
  *@route    DELETE api/user/:id
  *@desc     DELETE user by id

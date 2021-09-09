@@ -40,6 +40,23 @@ router.get("/nss", async (req, res) => {
     res.status(500).send("server Error");
   }
 });
+/**
+ * @desc get a nss data
+ * @access   public
+ * @route    GET api/nss/:id
+ */
+router.get("/nss/:id", async (req, res) => {
+  try {
+    const Nss = await NssNcc.findById(req.params.id);
+    if (!Nss) {
+      return res.status(404).json({ message: "Nss not found" });
+    }
+    res.json(Nss);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("server Error");
+  }
+});
 
 /**
  * @desc update nss data
@@ -51,7 +68,7 @@ router.put("/nss/:id", auth, async (req, res) => {
     const { title, img } = req.body;
     const Nss = await NssNcc.findById(req.params.id);
     if (!Nss) {
-      return res.status(404).json({ msg: "Nss not found" });
+      return res.status(404).json({ message: "Nss not found" });
     }
     Nss.title = title;
     Nss.img = img;
@@ -72,7 +89,7 @@ router.delete("/nss/:id", auth, async (req, res) => {
   try {
     const Nss = await NssNcc.findById(req.params.id);
     if (!Nss) {
-      return res.status(404).json({ msg: "Nss not found" });
+      return res.status(404).json({ message: "Nss not found" });
     }
     await Nss.remove();
     res.json({ msg: "Nss removed" });
