@@ -1,6 +1,6 @@
 import express from "express";
 import auth from "../midddleware/auth.js";
-import NssNcc from "../models/NssNcc.js";
+import NssNcc from "../models/NssNcc";
 
 const router = express.Router();
 

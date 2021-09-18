@@ -1,9 +1,9 @@
 import express from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import User from "../models/Users.js";
-import auth from "../midddleware/auth.js";
-import adminAuth from "../midddleware/adminAuth.js";
+import User from "../models/Users";
+import auth from "../midddleware/auth";
+import adminAuth from "../midddleware/adminAuth";
 
 const router = express.Router();
 const jwtSecret = process.env.ACCESS_TOKEN_SECRET;

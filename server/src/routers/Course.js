@@ -1,7 +1,7 @@
 import express from "express";
-import auth from "../midddleware/auth.js";
-import Courses from "../models/Courses.js";
-import CourseDetails from "../models/CourseDetails.js";
+import auth from "../midddleware/auth";
+import Courses from "../models/Courses";
+import CourseDetails from "../models/CourseDetails";
 
 const router = express.Router();
 
