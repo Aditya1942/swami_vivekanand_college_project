@@ -12,14 +12,14 @@ const Academic = () => {
       ExternalLink: false,
     },
     {
-      id: 1,
+      id: <i class="fas fa-signal-alt-2    "></i>,
       title: "Results",
       img: "results.jpg",
       ExternalLink: true,
       link: "http://result.saurashtrauniversity.edu/Default1.aspx",
     },
     {
-      id: 1,
+      id: 3,
       title: "Old Question Paper",
       img: "qpaper.jpg",
       ExternalLink: true,
@@ -44,9 +44,8 @@ const Academic = () => {
           </div>
           <div className="row">
             {AcademicData.map((course) => (
-              <div className="col-lg-4">
+              <div className="col-lg-4" key={course.id}>
                 <AcademicComponent
-                  key={course.id}
                   title={course.title}
                   img={course.img}
                   link={course.link}

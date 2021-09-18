@@ -2,23 +2,30 @@ import HeaderMenu from "./Components/HeaderMenu";
 import Footer from "./Components/Footer";
 import BackToTopBtn from "./Components/BackToTopBtn";
 import Loader from "./Components/Loader";
-import { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
+export const AppContext = React.createContext({});
+
 const Approuter = ({ children }) => {
-  const [open, setOpen] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setOpen(false);
-    }, 300);
-  }, []);
+  const [open, setOpen] = React.useState(true);
+  
+  const Show = ()=>{
+    setOpen(true)
+  }
+  const Hide = ()=>{
+    setOpen(false)
+  }
+ 
   return (
+    <AppContext.Provider value={{Loader:{Show, Hide}}}>
     <div className="App">
+      <Loader open={open}/>
       <HeaderMenu />
-      <Loader open={open} />
-      {children}
+        {children}
       <Footer />
       <BackToTopBtn />
     </div>
+    </AppContext.Provider>
   );
 };
 export default Approuter;

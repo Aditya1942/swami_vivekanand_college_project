@@ -1,8 +1,9 @@
 import React from "react";
 
-const Loader = ({ open }) => {
-  return open ? (
-    <div id="preloader-active">
+
+const Loader = ({open}) => {
+  return open && (
+    <div id="preloader-active" style={{display:!open?"none":"block"}}>
       <div className="preloader d-flex align-items-center justify-content-center">
         <div className="preloader-inner position-relative">
           <div className="preloader-circle" />
@@ -12,9 +13,7 @@ const Loader = ({ open }) => {
         </div>
       </div>
     </div>
-  ) : (
-    <div />
-  );
+  ) 
 };
 
 export default Loader;

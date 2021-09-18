@@ -4,10 +4,15 @@ import Header from "../../Components/Header";
 import axios from "axios";
 import { CourseDetailData } from "../../Database";
 import "./css/style.css";
+import useLoader from "../../hooks/useLoader";
 
 const Courses = () => {
   const [CoursesList, setCoursesList] = useState([]);
+  const loader = useLoader();
+
   useEffect(() => {
+    loader.Show()
+
     const source = axios.CancelToken.source();
     axios({
       url: "/courses",
@@ -17,6 +22,8 @@ const Courses = () => {
     }).then((data) => {
       setCoursesList(data.data);
       console.log(data.data);
+      loader.Hide()
+
     });
     console.log(CourseDetailData);
     return () => {

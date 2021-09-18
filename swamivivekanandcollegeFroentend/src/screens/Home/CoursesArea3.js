@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CourseComponent from "../../Components/CourseComponent";
-import { CoursesList } from "../../Database";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const CoursesArea3 = () => {
+import axios from "axios";
+import useLoader from "../../hooks/useLoader";
   var settings = {
     dots: false,
     infinite: true,
@@ -51,6 +50,29 @@ const CoursesArea3 = () => {
       },
     ],
   };
+const CoursesArea3 = () => {
+
+  const loader = useLoader();
+
+  const [CoursesList, setCoursesList] = useState([]);
+  useEffect(() => {
+    loader.Show()
+    const source = axios.CancelToken.source();
+    axios({
+      url: "/courses",
+      method: "get",
+      dataType: "json",
+      cancelToken: source.token,
+    }).then((data) => {
+      setCoursesList(data.data);
+      console.log(data.data);
+      loader.Hide()
+
+    });
+    return () => {
+      source.cancel("hey yo! going too fast. take it easy");
+    };
+  }, []);
   return (
     <div className="courses-area section-padding40 fix pb-1">
       <div className="container">
@@ -64,9 +86,9 @@ const CoursesArea3 = () => {
         <Slider {...settings}>
           {/* <div className="courses-actives"> */}
           {/* Course */}
-          {CoursesList.map((course, index) => (
+          {CoursesList?.map((course, index) => (
             <CourseComponent
-              key={course.id}
+              key={course._id}
               title={course.title}
               img={course.img}
               subCourse={course.subCourse}

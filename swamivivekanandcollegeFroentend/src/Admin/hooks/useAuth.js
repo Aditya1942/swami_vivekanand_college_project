@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { Redirect, Route, useHistory, useRouteMatch } from "react-router";
+import { Redirect, Route, useRouteMatch } from "react-router";
 
 export const authContext = createContext({});
 
@@ -38,7 +38,7 @@ export function useAuth() {
 // A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
 export function PrivateRoute({ children, ...rest }) {
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
   const { auth } = useContext(authContext);
   const { loading } = auth;
   if (loading) {

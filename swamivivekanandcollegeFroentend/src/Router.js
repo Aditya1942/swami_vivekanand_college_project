@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import AdminRouter from "./Admin/AdminRouter";
 import AlertMsg from "./Admin/components/AlertMsg";
 import { ProvideAuth } from "./Admin/hooks/useAuth";
 import Approuter from "./Approuter";
-import { CoursesList } from "./Database";
+import Loader from "./Components/Loader";
 import About from "./screens/About";
 import Academic from "./screens/Academic/Academic";
 import Syllabus from "./screens/Academic/Syllabus";
@@ -24,13 +24,12 @@ function Router() {
           <Home />
         </Approuter>
       </Route>
-
       <Route exact path={`/courses`}>
         <Approuter>
           <Courses />
         </Approuter>
       </Route>
-      <Route path={`/courses/:courseId`}>
+      <Route path={`/courses/:courseName`}>
         <Approuter>
           <CourseDetails />
         </Approuter>

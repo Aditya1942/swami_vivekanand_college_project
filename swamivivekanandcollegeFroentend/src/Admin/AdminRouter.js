@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { Route, Switch, useHistory, useRouteMatch } from "react-router";
+import React from "react";
+import { Route, Switch,  useRouteMatch } from "react-router";
 import AdminIndex from ".";
 import NavBar from "./components/NavBar";
 import SignIn from "./screens/SignIn";
-import { PrivateRoute, useAuth } from "./hooks/useAuth";
+import { PrivateRoute } from "./hooks/useAuth";
 
 const AdminRouter = () => {
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
 
   return (
     <div className="Admin">

@@ -6,6 +6,7 @@ import AboutArea5 from "./AboutArea5";
 import CoCurricularActivities4 from "./CoCurricularActivities4";
 
 const Home = () => {
+
   return (
     <main>
       {/*? slider Area Start*/}

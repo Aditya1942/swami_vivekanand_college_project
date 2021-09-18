@@ -1,6 +1,7 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Header from "../../Components/Header";
-import { NssGaleryData } from "../../Database";
+import useLoader from "../../hooks/useLoader";
 
 const NccGallery = ({ title, img }) => {
   let imgUrl = `${process.env.PUBLIC_URL}/img/nss/${img}`;
@@ -22,6 +23,26 @@ const NccGallery = ({ title, img }) => {
 };
 
 const Nss = () => {
+  const [NssGaleryData, setNssGaleryData] = useState([]);
+  const loader = useLoader();
+  useEffect(() => {
+    loader.Show()
+    const source = axios.CancelToken.source();
+    axios({
+      url: "/nss  ",
+      method: "get",
+      dataType: "json",
+      cancelToken: source.token,
+    }).then((data) => {
+      setNssGaleryData(data.data);
+      console.log(data.data);
+      loader.Hide()
+
+    });
+    return () => {
+      source.cancel("hey yo! going too fast. take it easy");
+    };
+  }, []);
   return (
     <div>
       <Header title="NSS" Breadcrumb={["NSS"]} BreadcrumbLink={["/nss"]} />
@@ -72,8 +93,8 @@ const Nss = () => {
         <div className="section-top-border">
           <h3>Our College's Activity in NSS</h3>
           <div className="row gallery-item">
-            {NssGaleryData.map((item, index) => (
-              <NccGallery key={item.id} img={item.img} title={item.title} />
+            {NssGaleryData?.map((item, index) => (
+              <NccGallery key={item._id} img={item.img} title={item.title} />
             ))}
           </div>
         </div>

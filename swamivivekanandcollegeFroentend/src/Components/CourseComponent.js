@@ -17,7 +17,7 @@ const CourseComponent = ({ title, img, subCourse }) => {
             <h3 key={item._id} className="mt-2">
               <Link
                 to={{
-                  pathname: `/courses/${item._id}`,
+                  pathname: `/courses/${item.name}`,
                 }}
               >
                 {item.title}

@@ -7,7 +7,7 @@ import { useHistory } from "react-router";
 import { authContext } from "../hooks/useAuth";
 const NavBar = ({ children }) => {
   let history = useHistory();
-  const { setAuthData, auth } = useContext(authContext);
+  const { setAuthData } = useContext(authContext);
   const LogOut = () => {
     setAuthData("", () => {
       history.push("/admin");

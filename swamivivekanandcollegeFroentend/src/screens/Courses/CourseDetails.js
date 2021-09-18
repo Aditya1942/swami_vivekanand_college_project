@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../Components/Header";
+import useLoader from "../../hooks/useLoader";
 import CourseDetailHeader from "./CourseDetailHeader";
 import CourseDetailsAfter from "./CourseDetailsAfter";
 
@@ -11,19 +12,22 @@ import CourseSubjects from "./CourseSubjects";
 import "./css/style.css";
 
 const CourseDetails = () => {
-  const { courseId } = useParams();
+  const { courseName } = useParams();
+  const loader = useLoader();
 
   const [CourseData, setCourseData] = useState({});
   useEffect(() => {
+    loader.Show()
     const source = axios.CancelToken.source();
     axios({
-      url: "/courses/details/" + courseId,
+      url: "/courses/details/" + courseName,
       method: "get",
       dataType: "json",
       cancelToken: source.token,
     }).then((data) => {
       setCourseData(data.data);
       console.log(data.data);
+      loader.Hide()
     });
 
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -36,7 +40,7 @@ const CourseDetails = () => {
       <Header
         title={CourseData?.maniTitle}
         Breadcrumb={["Courses", CourseData?.maniTitle]}
-        BreadcrumbLink={["/courses", courseId]}
+        BreadcrumbLink={["/courses", courseName]}
       />
       <div className="whole-wrap">
         <div className="container box_1170">

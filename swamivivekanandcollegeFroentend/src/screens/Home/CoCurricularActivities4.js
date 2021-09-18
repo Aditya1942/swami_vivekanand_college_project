@@ -1,55 +1,76 @@
-import React from "react";
-import { CoCurricularActivitiesData } from "../../Database";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import useLoader from "../../hooks/useLoader";
+import axios from "axios";
+var settings = {
+  dots: false,
+  infinite: true,
+  autoplay: true,
+  speed: 400,
+  arrows: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+      },
+    },
+  ],
+};
 const CoCurricularActivities4 = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    speed: 400,
-    arrows: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-        },
-      },
-    ],
-  };
+  const loader = useLoader();
+  const [CoCurricularActivitiesData, setCoCurricularActivitiesData] = useState(
+    []
+  );
+  useEffect(() => {
+    loader.Show();
+    const source = axios.CancelToken.source();
+    axios({
+      url: "/CoCurricularActivity",
+      method: "get",
+      dataType: "json",
+      cancelToken: source.token,
+    }).then((data) => {
+      setCoCurricularActivitiesData(data.data);
+      console.log(data.data);
+      loader.Hide();
+    });
+    return () => {
+      source.cancel("hey yo! going too fast. take it easy");
+    };
+  }, []);
   return (
     <div className="courses-area section-padding40 fix pt-1 ">
       <div className="container">

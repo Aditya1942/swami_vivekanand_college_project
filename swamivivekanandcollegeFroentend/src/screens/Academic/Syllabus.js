@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Header from "../../Components/Header";
 import { SyllabusCoursesList } from "../../Database";
 
@@ -16,15 +15,14 @@ const SyllabusComponent = ({ title, img, subCourse }) => {
         <div className="properties__caption">
           <p>{title}</p>
           {subCourse.map((item, index) => (
-            <span>
-              <h3 key={item.id} className="mt-2">
-                {item.title}
-              </h3>
+            <span key={index}>
+              <h3 className="mt-2">{item.title}</h3>
               {item.pdfs.map((pdf, i) => {
                 let titlePdf =
                   i === 0 ? "Sem 1-2" : i === 1 ? "Sem 3-4" : "Sem 5-6";
                 return (
                   <a
+                    key={i}
                     href={pdf}
                     download
                     target="_blank"
@@ -61,7 +59,7 @@ const Syllabus = () => {
           </div>
           <div className="row">
             {SyllabusCoursesList.map((course, index) => (
-              <div className="col-lg-4">
+              <div className="col-lg-4" key={index}>
                 <SyllabusComponent
                   key={course.id}
                   title={course.title}

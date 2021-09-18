@@ -1,6 +1,7 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Header from "../../Components/Header";
-import { NccGaleryData } from "../../Database";
+import useLoader from "../../hooks/useLoader";
 
 const NccGallery = ({ title, img }) => {
   let imgUrl = `${process.env.PUBLIC_URL}/img/ncc/${img}`;
@@ -22,6 +23,26 @@ const NccGallery = ({ title, img }) => {
 };
 
 const Ncc = () => {
+  const [NccGaleryData, setNccGaleryData] = useState([]);
+  const loader = useLoader();
+  useEffect(() => {
+    loader.Show()
+    const source = axios.CancelToken.source();
+    axios({
+      url: "/ncc",
+      method: "get",
+      dataType: "json",
+      cancelToken: source.token,
+    }).then((data) => {
+      setNccGaleryData(data.data);
+      console.log(data.data);
+      loader.Hide()
+
+    });
+    return () => {
+      source.cancel("hey yo! going too fast. take it easy");
+    };
+  }, []);
   return (
     <div>
       <Header title="NCC" Breadcrumb={["NCC"]} BreadcrumbLink={["/ncc"]} />
@@ -41,7 +62,7 @@ const Ncc = () => {
                 {"National Cadets Corps(NCC)"}
               </h1>
               <div className="feature-img d-flex justify-content-center">
-                <img className="img-fluid" src="/img/ncc/NCC_header.jpg" alt />
+                <img className="img-fluid" src="/img/ncc/NCC_header.jpg" alt='' />
               </div>
               <div className="blog_details">
                 <h2 style={{ color: "#2d2d2d" }}>National Cadets Corps(NCC)</h2>
@@ -69,8 +90,8 @@ const Ncc = () => {
         <div className="section-top-border">
           <h3>Our College's Activity in NCC</h3>
           <div className="row gallery-item">
-            {NccGaleryData.map((item, index) => (
-              <NccGallery key={item.id} img={item.img} title={item.title} />
+            {NccGaleryData?.map((item, index) => (
+              <NccGallery key={item._id} img={item.img} title={item.title} />
             ))}
           </div>
         </div>
