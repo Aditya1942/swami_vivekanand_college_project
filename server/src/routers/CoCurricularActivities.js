@@ -1,6 +1,6 @@
 import express from "express";
 import auth from "../midddleware/auth";
-import CoCurricularActivities from "../models/CoCurricularActivities";
+import CoCurricularActivities from "../schemas/CoCurricularActivities.schema";
 
 const router = express.Router();
 

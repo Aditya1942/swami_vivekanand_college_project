@@ -10,6 +10,7 @@ function openImage(base64URL) {
  </iframe>`);
 }
 const Gallery = () => {
+  console.log(GalleryData);
   return (
     <div className="gallery">
       <Header
@@ -31,6 +32,9 @@ const Gallery = () => {
                       item.folderPath +
                       "/" +
                       image.img;
+                    // let imgurl =
+                    // process.env.REACT_APP_IMG_URL +
+                    // image.img;
                     return (
                       <div className={image.isBig ? "col-md-6" : "col-md-4"}>
                         <span className="img-pop-up">

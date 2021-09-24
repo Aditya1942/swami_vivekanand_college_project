@@ -1,7 +1,8 @@
 import express from "express";
 import auth from "../midddleware/auth";
-import Courses from "../models/Courses";
-import CourseDetails from "../models/CourseDetails";
+import Courses from "../schemas/Courses.schema";
+import CourseDetails from "../schemas/CourseDetails.schema";
+import { CourseDetailsModel, CourseModel } from "src/models/Courses";
 
 const router = express.Router();
 
@@ -62,11 +63,21 @@ router.get("/:id", async (req, res) => {
  */
 router.put("/:id", auth, async (req, res) => {
   try {
-    const course = await Courses.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
-    res.json(course);
+    const course: CourseModel = await Courses.findById(req.params.id);
+    let updateCourse: CourseModel = {
+      title: req.body.title,
+      img: req.body.img,
+      subCourse: course.subCourse,
+    };
+    const update = await Courses.findByIdAndUpdate(
+      req.params.id,
+      updateCourse,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+    res.json(update);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -175,16 +186,30 @@ router.get("/details/:courseName", async (req, res) => {
  */
 router.put("/details/:courseName", auth, async (req, res) => {
   try {
-    const courseDetails = await CourseDetails.findOneAndUpdate(
+    const course: CourseDetailsModel = await CourseDetails.findOne({
+      name: req.params.courseName,
+    });
+    let updateCourse: CourseDetailsModel = {
+      maniTitle: req.body.maniTitle,
+      title: req.body.title,
+      name: req.body.name,
+      subjects: course.subjects,
+      description: req.body.dubjects,
+      eligibility: req.body.eligibility,
+      futureScope: req.body.futureScope,
+      afterThisCourse: req.body.afterThisCourse,
+      courseDuration: req.body.courseDuration,
+    };
+    const updateCourseDetails = await CourseDetails.findOneAndUpdate(
       { name: req.params.courseName },
-      req.body,
+      updateCourse,
       {
         new: true,
         runValidators: true,
       }
     );
-    if (courseDetails) {
-      res.json(courseDetails);
+    if (updateCourseDetails) {
+      res.json(updateCourseDetails);
     } else {
       res.status(404).json({ message: "No course details found" });
     }

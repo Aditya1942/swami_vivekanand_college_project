@@ -1,7 +1,7 @@
 import express from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import User from "../models/Users";
+import User from "../schemas/Users.schema";
 import auth from "../midddleware/auth";
 import adminAuth from "../midddleware/adminAuth";
 

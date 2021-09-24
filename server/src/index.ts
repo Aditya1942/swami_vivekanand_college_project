@@ -5,6 +5,7 @@ import AuthRoute from "./routers/auth";
 import CoursesRoute from "./routers/Course";
 import NssNccRoute from "./routers/NssNcc";
 import CoCurricularActivityRoute from "./routers/CoCurricularActivities";
+import Gallery from "./routers/Gallery";
 import path from "path";
 
 // config
@@ -28,3 +29,4 @@ app.use("/api/auth", AuthRoute);
 app.use("/api/courses", CoursesRoute);
 app.use("/api", NssNccRoute);
 app.use("/api/CoCurricularActivity", CoCurricularActivityRoute);
+app.use("/api/gallery", Gallery);

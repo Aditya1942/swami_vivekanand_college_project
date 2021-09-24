@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import User from "../models/Users";
+import User from "../schemas/Users.schema";
 const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 
 export default async function (req, res, next) {
