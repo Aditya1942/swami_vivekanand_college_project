@@ -1,5 +1,5 @@
-import Mongoose from "mongoose";
-const GallerySchema = new Mongoose.Schema({
+import mongoose from "mongoose";
+const GallerySchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -23,5 +23,5 @@ const GallerySchema = new Mongoose.Schema({
     },
   ],
 });
-let Gallery = mongoose.model("Courses", GallerySchema);
+let Gallery = mongoose.model("Gallery", GallerySchema);
 export default Gallery;

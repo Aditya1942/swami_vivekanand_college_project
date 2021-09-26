@@ -84,7 +84,7 @@ router.post("/signup", async (req, res) => {
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) {
-            res.status(500)({
+            res.status(500).json({
               error: err,
             });
             // throw err;
