@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const GallerySchema = new mongoose.Schema({
+const Gallery = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -23,5 +23,5 @@ const GallerySchema = new mongoose.Schema({
     },
   ],
 });
-let Gallery = mongoose.model("Gallery", GallerySchema);
-export default Gallery;
+let GallerySchema = mongoose.model("Gallery", Gallery);
+export default GallerySchema;

@@ -2,7 +2,7 @@ import express from "express";
 import auth from "../midddleware/auth";
 import Courses from "../schemas/Courses.schema";
 import CourseDetails from "../schemas/CourseDetails.schema";
-import { CourseDetailsModel, CourseModel } from "src/models/Courses";
+import { CourseDetailsModel, CourseModel } from "src/models/Courses.model";
 
 const router = express.Router();
 
