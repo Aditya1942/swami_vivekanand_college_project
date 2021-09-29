@@ -216,7 +216,7 @@ router.put(
     try {
       const { id, imgId } = req.params;
       const { title, isBig } = req.body;
-      const img = req.file.filename;
+      const img = req.file?.filename || undefined;
       const gallery = await GallerySchema.findById(id);
       if (!gallery) {
         return res.status(404).json({ msg: "Gallery not found" });
@@ -227,13 +227,13 @@ router.put(
         if (imgIndex === undefined) {
           return res.status(404).json({ msg: "Image not found" });
         } else {
-          const updatedGallery = await GallerySchema.updateOne(
+          const updatedGallery = await GallerySchema.findOneAndUpdate(
             { "images._id": String(imgId) },
             {
               $set: {
                 "images.$.title": String(title),
-                "images.$.isBig": Boolean(isBig),
-                "images.$.img": String(img),
+                "images.$.isBig": isBig,
+                "images.$.img": img || imgIndex.img,
               },
             },
             { new: true }

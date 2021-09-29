@@ -419,7 +419,8 @@ export const CourseDetailData = [
     img: "science.jpg",
     name: "bsc",
     subjects: {
-      subjects: ["English", "History", "Gujarati", "Economics", "Hindi"],
+      subjects: ["Chemistry", "Physics", "Mathematics", "Microbiology"],
+
       semester: [],
     },
 
@@ -451,7 +452,7 @@ export const CourseDetailData = [
     img: "arts.jpg",
     name: "ba",
     subjects: {
-      subjects: ["Chemistry", "Physics", "Mathematics", "Microbiology"],
+      subjects: ["English", "History", "Gujarati", "Economics", "Hindi"],
       semester: [],
     },
 
@@ -767,7 +768,140 @@ export const CourseDetailData = [
       "This Program is extend to six semester each with duration six months",
   },
 ];
+export const NccGaleryData = [
+  {
+    id: 1,
+    img: "ncc1.jpg",
+    title: "Firing Demonstration",
+  },
+  {
+    id: 2,
+    img: "ncc2.jpg",
+    title: "Firing At Dhrangadhra Military Camp",
+  },
+  {
+    id: 3,
+    img: "ncc3.jpg",
+    title: "Ncc Cadets",
+  },
+  {
+    id: 4,
+    img: "ncc4.jpg",
+    title: "Social Activity by NCC Cadets",
+  },
+  {
+    id: 5,
+    img: "ncc5.jpg",
+    title: "Traffic Awarness",
+  },
+  {
+    id: 6,
+    img: "ncc6.jpg",
+    title: "At Parade Ground",
+  },
+];
 
+export const NssGaleryData = [
+  {
+    id: 1,
+    img: "nss1.jpg",
+    title: "2nd Oct Activities",
+  },
+  {
+    id: 2,
+    img: "nss2.jpg",
+    title: "NSS Students",
+  },
+  {
+    id: 3,
+    img: "nss3.jpg",
+    title: "Youth Parliament Programme",
+  },
+  {
+    id: 4,
+    img: "nss4.jpg",
+    title: "Youth Parliament Programme Certificate Distribution",
+  },
+  {
+    id: 5,
+    img: "nss5.jpg",
+    title: "Swachhata Abhiyan By Students",
+  },
+  {
+    id: 6,
+    img: "nss6.jpg",
+    title: "Swachhata Abhiyan By Students",
+  },
+];
+export const CoCurricularActivitiesData = [
+  { id: 1, img: "1.jpg" },
+  { id: 2, img: "2.jpg" },
+  { id: 3, img: "3.jpg" },
+  { id: 4, img: "4.jpg" },
+  { id: 5, img: "5.jpg" },
+  { id: 6, img: "6.jpg" },
+  { id: 7, img: "7.jpg" },
+];
+
+export const GalleryData = [
+  {
+    id: 1,
+    title: "Annual Function",
+    folderPath: "/gallery/Annual_function",
+    images: [
+      { id: 1, img: "f1.jpg", title: "", isBig: false },
+      { id: 2, img: "f2.jpg", title: "", isBig: false },
+      { id: 3, img: "f3.jpg", title: "", isBig: false },
+      { id: 4, img: "f4.jpg", title: "", isBig: false },
+      { id: 5, img: "f5.jpg", title: "", isBig: false },
+      { id: 6, img: "f6.jpg", title: "", isBig: false },
+    ],
+  },
+  {
+    id: 1,
+    title: "Tour",
+    folderPath: "/gallery/Tour",
+    images: [
+      { id: 1, img: "tour1.jpg", title: "Rajashthan Tour", isBig: false },
+      { id: 2, img: "tour2.jpg", title: "Delhi Tour", isBig: false },
+      { id: 3, img: "tour3.jpg", title: "Mumbai Tour", isBig: false },
+      {
+        id: 4,
+        img: "tour4.jpg",
+        title: "Industrial visit At AdaniPort-Mundra",
+        isBig: true,
+      },
+      {
+        id: 5,
+        img: "tour5.jpg",
+        title: "Industrial visit At AdaniPort-Mundra",
+        isBig: true,
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Other Activities",
+    folderPath: "/gallery/Other",
+    images: [
+      { id: 1, img: "o1.jpg", title: "Addiction Free Seminar", isBig: false },
+      { id: 2, img: "o2.jpg", title: "Carrier Guide Seminar", isBig: false },
+      { id: 3, img: "o3.jpg", title: "Carrier Guide Seminar", isBig: false },
+      {
+        id: 4,
+        img: "o4.jpg",
+        title: "Teacher's Day",
+        isBig: true,
+      },
+      {
+        id: 5,
+        img: "o5.jpg",
+        title: "Picnic -Nal Sarovar",
+        isBig: true,
+      },
+    ],
+  },
+];
 export const SyllabusCoursesList = [
   {
     id: 1,
@@ -985,140 +1119,4 @@ export const SyllabusCoursesList = [
       },
     ],
   },
-];
-
-export const NccGaleryData = [
-  {
-    id: 1,
-    img: "ncc1.jpg",
-    title: "Firing Demonstration",
-  },
-  {
-    id: 2,
-    img: "ncc2.jpg",
-    title: "Firing At Dhrangadhra Military Camp",
-  },
-  {
-    id: 3,
-    img: "ncc3.jpg",
-    title: "Ncc Cadets",
-  },
-  {
-    id: 4,
-    img: "ncc4.jpg",
-    title: "Social Activity by NCC Cadets",
-  },
-  {
-    id: 5,
-    img: "ncc5.jpg",
-    title: "Traffic Awarness",
-  },
-  {
-    id: 6,
-    img: "ncc6.jpg",
-    title: "At Parade Ground",
-  },
-];
-
-export const NssGaleryData = [
-  {
-    id: 1,
-    img: "nss1.jpg",
-    title: "2nd Oct Activities",
-  },
-  {
-    id: 2,
-    img: "nss2.jpg",
-    title: "NSS Students",
-  },
-  {
-    id: 3,
-    img: "nss3.jpg",
-    title: "Youth Parliament Programme",
-  },
-  {
-    id: 4,
-    img: "nss4.jpg",
-    title: "Youth Parliament Programme Certificate Distribution",
-  },
-  {
-    id: 5,
-    img: "nss5.jpg",
-    title: "Swachhata Abhiyan By Students",
-  },
-  {
-    id: 6,
-    img: "nss6.jpg",
-    title: "Swachhata Abhiyan By Students",
-  },
-];
-
-export const GalleryData = [
-  {
-    id: 1,
-    title: "Annual Function",
-    folderPath: "/gallery/Annual_function",
-    images: [
-      { id: 1, img: "f1.jpg", title: "", isBig: false },
-      { id: 2, img: "f2.jpg", title: "", isBig: false },
-      { id: 3, img: "f3.jpg", title: "", isBig: false },
-      { id: 4, img: "f4.jpg", title: "", isBig: false },
-      { id: 5, img: "f5.jpg", title: "", isBig: false },
-      { id: 6, img: "f6.jpg", title: "", isBig: false },
-    ],
-  },
-  {
-    id: 1,
-    title: "Tour",
-    folderPath: "/gallery/Tour",
-    images: [
-      { id: 1, img: "tour1.jpg", title: "Rajashthan Tour", isBig: false },
-      { id: 2, img: "tour2.jpg", title: "Delhi Tour", isBig: false },
-      { id: 3, img: "tour3.jpg", title: "Mumbai Tour", isBig: false },
-      {
-        id: 4,
-        img: "tour4.jpg",
-        title: "Industrial visit At AdaniPort-Mundra",
-        isBig: true,
-      },
-      {
-        id: 5,
-        img: "tour5.jpg",
-        title: "Industrial visit At AdaniPort-Mundra",
-        isBig: true,
-      },
-    ],
-  },
-  {
-    id: 1,
-    title: "Other Activities",
-    folderPath: "/gallery/Other",
-    images: [
-      { id: 1, img: "o1.jpg", title: "Addiction Free Seminar", isBig: false },
-      { id: 2, img: "o2.jpg", title: "Carrier Guide Seminar", isBig: false },
-      { id: 3, img: "o3.jpg", title: "Carrier Guide Seminar", isBig: false },
-      {
-        id: 4,
-        img: "o4.jpg",
-        title: "Teacher's Day",
-        isBig: true,
-      },
-      {
-        id: 5,
-        img: "o5.jpg",
-        title: "Picnic -Nal Sarovar",
-        isBig: true,
-      },
-    ],
-  },
-];
-
-export const CoCurricularActivitiesData = [
-  { id: 1, img: "1.jpg" },
-  { id: 2, img: "2.jpg" },
-  { id: 3, img: "3.jpg" },
-  { id: 4, img: "4.jpg" },
-  { id: 5, img: "5.jpg" },
-  { id: 6, img: "6.jpg" },
-  { id: 7, img: "7.jpg" },
 ];
