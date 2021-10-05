@@ -6,6 +6,7 @@ import CoursesRoute from "./routers/Course";
 import NssNccRoute from "./routers/NssNcc";
 import CoCurricularActivityRoute from "./routers/CoCurricularActivities";
 import Gallery from "./routers/Gallery";
+import Syllabus from "./routers/Syllabus";
 import path from "path";
 
 // config
@@ -28,5 +29,6 @@ app.get("/api", (req, res) => res.send("Hello World!"));
 app.use("/api/auth", AuthRoute);
 app.use("/api/courses", CoursesRoute);
 app.use("/api", NssNccRoute);
-app.use("/api/CoCurricularActivity", CoCurricularActivityRoute);
+app.use("/api/coCurricularActivity", CoCurricularActivityRoute);
 app.use("/api/gallery", Gallery);
+app.use("/api/syllabus", Syllabus);

@@ -1,2 +1,3 @@
-export default Gallery;
-declare let Gallery: any;
+export default GallerySchema;
+declare let GallerySchema: mongoose.Model<any, {}, {}>;
+import mongoose from "mongoose";

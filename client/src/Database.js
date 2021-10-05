@@ -907,7 +907,6 @@ export const SyllabusCoursesList = [
     id: 1,
     title: "Computer Science",
     img: "cs.jpg",
-
     subCourse: [
       {
         id: 1,

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const GallerySchema = new mongoose_1.default.Schema({
+const Gallery = new mongoose_1.default.Schema({
     title: {
         type: String,
         required: true,
@@ -28,6 +28,6 @@ const GallerySchema = new mongoose_1.default.Schema({
         },
     ],
 });
-let Gallery = mongoose.model("Courses", GallerySchema);
-exports.default = Gallery;
+let GallerySchema = mongoose_1.default.model("Gallery", Gallery);
+exports.default = GallerySchema;
 //# sourceMappingURL=Gallery.schema.js.map

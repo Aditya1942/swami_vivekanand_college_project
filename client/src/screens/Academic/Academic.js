@@ -7,12 +7,12 @@ const Academic = () => {
     {
       id: 1,
       title: "Syllabus",
-      img: "Syllabus.jpg",
+      img: "syllabus.jpg",
       link: "/syllabus",
       ExternalLink: false,
     },
     {
-      id: <i class="fas fa-signal-alt-2    "></i>,
+      id: 2,
       title: "Results",
       img: "results.jpg",
       ExternalLink: true,
