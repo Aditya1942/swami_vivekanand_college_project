@@ -8,7 +8,7 @@ const router: Router = express.Router();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "public/image/gallery");
+    cb(null, "public/img/gallery");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix =

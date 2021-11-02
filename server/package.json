@@ -8,7 +8,7 @@
     "start": "nodemon ./src/index.ts",
     "start:prod": "node build/index.js",
     "tsc": "tsc",
-    "prepare": "npm run tsc"
+    "build": "npm run tsc"
   },
   "author": "",
   "license": "ISC",

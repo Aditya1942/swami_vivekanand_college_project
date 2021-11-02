@@ -11,6 +11,7 @@ const Course_1 = __importDefault(require("./routers/Course"));
 const NssNcc_1 = __importDefault(require("./routers/NssNcc"));
 const CoCurricularActivities_1 = __importDefault(require("./routers/CoCurricularActivities"));
 const Gallery_1 = __importDefault(require("./routers/Gallery"));
+const Syllabus_1 = __importDefault(require("./routers/Syllabus"));
 const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 const port = 3001;
@@ -24,6 +25,7 @@ app.get("/api", (req, res) => res.send("Hello World!"));
 app.use("/api/auth", auth_1.default);
 app.use("/api/courses", Course_1.default);
 app.use("/api", NssNcc_1.default);
-app.use("/api/CoCurricularActivity", CoCurricularActivities_1.default);
+app.use("/api/coCurricularActivity", CoCurricularActivities_1.default);
 app.use("/api/gallery", Gallery_1.default);
+app.use("/api/syllabus", Syllabus_1.default);
 //# sourceMappingURL=index.js.map

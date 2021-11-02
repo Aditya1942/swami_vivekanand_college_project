@@ -22,6 +22,10 @@ const Gallery = new mongoose.Schema({
       },
     },
   ],
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 let GallerySchema = mongoose.model("Gallery", Gallery);
 export default GallerySchema;

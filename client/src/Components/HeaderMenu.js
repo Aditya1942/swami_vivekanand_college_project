@@ -17,7 +17,7 @@ const HeaderMenu = () => {
                 <div className="col-xl-2 col-lg-2">
                   <div className="logo">
                     <Link to="/">
-                      <img src="assets/img/logo/logo.jpg" alt="" />
+                      <img src="assets/img/logo/logo.png" alt="" />
                     </Link>
                   </div>
                 </div>

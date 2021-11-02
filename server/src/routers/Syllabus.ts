@@ -31,7 +31,7 @@ router.post("/", auth, async (req, res) => {
  * @route   GET api/syllabus
  */
 
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const syllabus = await Syllabus.find();
     res.status(200).send(syllabus);
@@ -46,7 +46,7 @@ router.get("/", auth, async (req, res) => {
  * @route   GET api/syllabus/:id
  */
 
-router.get("/:id", auth, async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const syllabus = await Syllabus.findById(req.params.id);
     if (!syllabus) {
@@ -129,7 +129,7 @@ router.post("/:id/subCourse", auth, async (req, res) => {
  * @route   GET api/syllabus/:id/subCourse
  */
 
-router.get("/:id/subCourse", auth, async (req, res) => {
+router.get("/:id/subCourse", async (req, res) => {
   try {
     const syllabus = await Syllabus.findById(req.params.id);
     if (!syllabus) {
@@ -146,7 +146,7 @@ router.get("/:id/subCourse", auth, async (req, res) => {
  * @route   GET api/syllabus/:id/subCourse/:subCourseId
  */
 
-router.get("/:id/subCourse/:subCourseId", auth, async (req, res) => {
+router.get("/:id/subCourse/:subCourseId", async (req, res) => {
   try {
     const syllabus = await Syllabus.findById(req.params.id);
     if (!syllabus) {

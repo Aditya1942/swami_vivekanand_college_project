@@ -1,0 +1,1501 @@
+{
+	"info": {
+		"_postman_id": "62b43521-28f6-451d-b581-fb487ec9b7bd",
+		"name": "College-project-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"aditya\",\r\n    \"password\": \"Aditya123\"\r\n \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login?admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "admin",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Admin\",\r\n    \"password\": \"Pa$$w0rd\",\r\n    \"fullname\":\"Admin\",\r\n    \"phone\":9876543210\r\n \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/auth/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/auth/user/6139950a16197c3ae4b855ca",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"6139950a16197c3ae4b855ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Admin\",\r\n    \"password\": \"Pa$$w0rd\",\r\n    \"fullname\":\"Admin\",\r\n    \"phone\": 9876543210,\r\n    \"isAdmin\": true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/user/6139950a16197c3ae4b855ca",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"6139950a16197c3ae4b855ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/auth/user/613998a9ed46034a3841f175",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"613998a9ed46034a3841f175"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addAdmin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Admin2\",\r\n    \"password\": \"Pa$$w0rd\",\r\n    \"fullname\":\"Admin\",\r\n    \"phone\":9876543210,\r\n    \"isAdmin\": true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/addAdmin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"addAdmin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "/Courses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Computer Science\",\r\n    \"img\": \"cs.jpg\",\r\n    \"subCourse\": [\r\n        {\r\n            \"id\": 1,\r\n            \"maniTitle\": \"B.C.A.\",\r\n            \"title\": \"B.C.A.\",\r\n            \"name\": \"bca\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"maniTitle\": \"B.SC.(IT)\",\r\n            \"title\": \"B.SC.(IT)\",\r\n            \"name\": \"bcsit\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"maniTitle\": \"M.SC.(IT & CS)\",\r\n            \"title\": \"M.SC.(IT & CS)\",\r\n            \"name\": \"mscit\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Courses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/courses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Courses/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/courses/61399a80288878e74e3c7030",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"61399a80288878e74e3c7030"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Courses/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Computer science\",\r\n    \"img\": \"cs.jpg\",\r\n    \"subCourse\": [\r\n        {\r\n            \"id\": 1,\r\n            \"maniTitle\": \"B.C.A.\",\r\n            \"title\": \"B.C.A.\",\r\n            \"name\": \"bca\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"maniTitle\": \"B.SC.(IT)\",\r\n            \"title\": \"B.SC.(IT)\",\r\n            \"name\": \"bcsit\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"maniTitle\": \"M.SC.(IT & CS)\",\r\n            \"title\": \"M.SC.(IT & CS)\",\r\n            \"name\": \"mscit\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses/61384c6b693f0756136ddd94",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"61384c6b693f0756136ddd94"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Courses/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/courses/61399a80288878e74e3c7030",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"61399a80288878e74e3c7030"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course/details/:courseName",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"maniTitle\": \"Bachelor of Business Administration(B.B.A.)\",\r\n    \"title\": \"BBA - Bachelor of Business Administration.\",\r\n    \"img\": \"management.jpg\",\r\n    \"name\": \"bba\",\r\n    \"subjects\": {\r\n        \"subjects\": [],\r\n        \"semester\": [\r\n            {\r\n                \"id\": 1,\r\n                \"title\": \"Semester-1\",\r\n                \"subjects\": [\r\n                    \"Communication Skill\",\r\n                    \"Micro Economics\",\r\n                    \"Business Maths\",\r\n                    \"Fundamental of Management\",\r\n                    \"Office Automation\",\r\n                    \"Accounting\",\r\n                    \"FBO\",\r\n                    \"Environmental Science\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"title\": \"Semester-2\",\r\n                \"subjects\": [\r\n                    \"Conversional English\",\r\n                    \"Micro Economics\",\r\n                    \"Advance Techniques of Business Mathematics\",\r\n                    \"Emerging Trends in Contemporary Management\",\r\n                    \"Business Accounting\",\r\n                    \"E-Commerce\",\r\n                    \"IT Tools for Business\",\r\n                    \"Practical Studies\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 3,\r\n                \"title\": \"Semester-3\",\r\n                \"subjects\": [\r\n                    \"Personality Development & Communication Skills\",\r\n                    \"Managerial Economics\",\r\n                    \"Business Statistics\",\r\n                    \"Entrepreneurship Development\",\r\n                    \"Principles of Marketing\",\r\n                    \"Human Resource Management\",\r\n                    \"Financial Management\",\r\n                    \"Corporate Accounting\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 4,\r\n                \"title\": \"Semester-4\",\r\n                \"subjects\": [\r\n                    \"Corporate Communication\",\r\n                    \"Economics for DecisionMaking\",\r\n                    \"Statistics For BusinessDecisions\",\r\n                    \"Contemporary Issues in Marketing\",\r\n                    \"Organization Behavior\",\r\n                    \"Corporate Finance\",\r\n                    \"Advanced Corporate Accounting\",\r\n                    \"Practical Studies\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 5,\r\n                \"title\": \"Semester-5\",\r\n                \"subjects\": [\r\n                    \"Business Environment\",\r\n                    \"Business Law\",\r\n                    \"Production & Operation Management\",\r\n                    \"Direct Taxes\",\r\n                    \"Ethics and Corporate Social Responsibility\",\r\n                    \"Cost Accounting\",\r\n                    \"Marketing Group- Advance Marketing\",\r\n                    \"Finance Group- Investment Banking & Financial Services\"\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 6,\r\n                \"title\": \"Semester-6\",\r\n                \"subjects\": [\r\n                    \"Business Policy & Strategy\",\r\n                    \"Legal Aspects of Business\",\r\n                    \"Tax Planning & Management\",\r\n                    \"Financial Institutions & Market\",\r\n                    \"Management Accounting\",\r\n                    \"Practical Studies\",\r\n                    \"Marketing Group- Retail Management\",\r\n                    \"Finance Group- Security analysis & Portfolio Management\"\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"description\": \"It is one of the most popular bachelor degree programmes after class XII. The 3-year professional undergraduate course in Business Management is open to students from all the three streams: Science, Arts and Commerce. The BBA course is the gateway to numerous job opportunities in a plethora of sectors like marketing, education, finance, sales, and government to name just a few.\\n    The BBA course offers knowledge and training in management and leadership skills, to prepare them for managerial roles and entrepreneurship. During the tenure of the course, candidates learn various aspects of business administration and management through class room lectures and practical projects like internship.\",\r\n    \"eligibility\": \"Bachelor of Business Administration requires a candidate to have passed HSC (10+2) exam from any stream as passing subject with minimum 45% marks at 12th standard.\",\r\n    \"futureScope\": [\r\n        \"Human Resource Executive\",\r\n        \"Marketing Executive\",\r\n        \"Sales Executive\",\r\n        \"Marketing Manager\"\r\n    ],\r\n    \"afterThisCourse\": \"The BBA is an undergraduate degree course in computer applications for duration of 3 years. After completing BBA, a student can go for M.B.A., M.Com, which is a master course in Management.\\n    Apart from these options candidates are informed that after completing their BA course they become eligible to appear for government exams.\",\r\n    \"courseDuration\": \"This Program is extend to six semester each with duration six months\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses/details/bba",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"details",
+								"bba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course/details/all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/courses/details/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"details",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course/details/:courseName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/courses/details/bcsit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"details",
+								"bcsit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course/details/:courseName Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"BCA - Bachelor of Computer Applications.\",\r\n    \"maniTitle\": \"B.C.A.\",\r\n    \"name\": \"bca\",\r\n    \"subjects\": {\r\n        \"subjects\": [],\r\n        \"semester\": [\r\n            {\r\n                \"title\": \"Semester-1\",\r\n                \"subjects\": [\r\n                    \"Programming In C\",\r\n                    \"Computer Fundamental\",\r\n                    \"Technical Communication Skill\",\r\n                    \"Networking\",\r\n                    \"Practical - 1\",\r\n                    \"Practical - 2\"\r\n                ],\r\n                \"_id\": \"6139a30cf308e54bf8bc6d6e\"\r\n            },\r\n            {\r\n                \"title\": \"Semester-2\",\r\n                \"subjects\": [\r\n                    \"Data Structure Using C\",\r\n                    \"Web Development Using PHP\",\r\n                    \"Computer Organization & Architecture\",\r\n                    \"Mathematics\",\r\n                    \"Practical - 1\",\r\n                    \"Practical - 2\"\r\n                ],\r\n                \"_id\": \"6139a30cf308e54bf8bc6d6f\"\r\n            },\r\n            {\r\n                \"title\": \"Semester-3\",\r\n                \"subjects\": [\r\n                    \"Object Oriented Programming With C++\",\r\n                    \"WordPress\",\r\n                    \"Oracle\",\r\n                    \"System Analysis & Design\",\r\n                    \"Practical - 1\",\r\n                    \"Practical - 2\"\r\n                ],\r\n                \"_id\": \"6139a30cf308e54bf8bc6d70\"\r\n            },\r\n            {\r\n                \"title\": \"Semester-4\",\r\n                \"subjects\": [\r\n                    \"Core Java\",\r\n                    \"Programming With C#\",\r\n                    \"Advanced Networking\",\r\n                    \"OS & Linux\",\r\n                    \"Practical - 1\",\r\n                    \"Practical - 2\"\r\n                ],\r\n                \"_id\": \"6139a30cf308e54bf8bc6d71\"\r\n            },\r\n            {\r\n                \"title\": \"Semester-5\",\r\n                \"subjects\": [\r\n                    \"Advance Java\",\r\n                    \"Search Engine Optimization\",\r\n                    \"ASP.net\",\r\n                    \"Project\",\r\n                    \"Practical - 1\",\r\n                    \"Practical - 2\"\r\n                ],\r\n                \"_id\": \"6139a30cf308e54bf8bc6d72\"\r\n            },\r\n            {\r\n                \"title\": \"Semester-6\",\r\n                \"subjects\": [\r\n                    \"Android\",\r\n                    \"MS SQL Server 2012 & Data Warehouse & Data Mining\",\r\n                    \"WordPress\",\r\n                    \"Project\",\r\n                    \"Practical - 1\",\r\n                    \"Practical - 2\"\r\n                ],\r\n                \"_id\": \"6139a30cf308e54bf8bc6d73\"\r\n            }\r\n        ]\r\n    },\r\n    \"futureScope\": [\r\n        \"Web Designer\",\r\n        \"Web Developer\",\r\n        \"SEO\",\r\n        \"Software Developer\",\r\n        \"Mobile Application Developer\",\r\n        \"DBA\",\r\n        \"System Tester\",\r\n        \"Network Administrator\"\r\n    ],\r\n    \"description\": \"it is a three-year undergraduate course that can be pursued by the student who is aspiring their minds in IT field. The duration of the course is 3 years and divided into 6 semesters. It comprises of the subjects like database, networking, data structure, core programming languages like C and java. This course provides a lot of opportunities to the students who are interested in computer field and wants to work in the IT sector as programmer or software developer. To get complete knowledge about the course and career scope, you can go through this article.\",\r\n    \"eligibility\": \"Bachelor of Computer Science requires a candidate to have passed HSC (10+2) exam from any stream as passing subject with minimum 45% marks at 12th standard.\",\r\n    \"afterThisCourse\": \"The BCA is an undergraduate degree course in computer applications for duration of 3 years. After completing BCA, a student can go for M.Sc(IT&CA)/MCA which is a master course in computer application and is considered equivalent to engineering course B.Tech.\\n\\n    Apart from these options candidates are informed that after completing their BA course they become eligible to appear for government exams.\",\r\n    \"courseDuration\": \"This Program is extend to six semester each with duration six months.\",\r\n    \"_id\": \"6139a30cf308e54bf8bc6d6d\",\r\n    \"date\": \"2021-09-09T06:00:44.657Z\",\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses/details/bscit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"details",
+								"bscit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course/details/:courseName",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/courses/details/ba",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"courses",
+								"details",
+								"ba"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ncc&Nss",
+			"item": [
+				{
+					"name": "/nss",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"img\": \"nss1.jpg\",\r\n    \"title\": \"2nd Oct Activities\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/nss",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"nss"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/nss",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/nss",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"nss"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/nss/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/nss/6138f502d179dfff122ddf38",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"nss",
+								"6138f502d179dfff122ddf38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/nss/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"img\": \"nss1.jpg\",\r\n    \"title\": \"1nd Oct Activities\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/nss/6139a7fb90bfec1531260af6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"nss",
+								"6139a7fb90bfec1531260af6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/nss/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/nss/6139a7fb90bfec1531260af6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"nss",
+								"6139a7fb90bfec1531260af6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ncc",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"img\": \"nss1.jpg\",\r\n    \"title\": \"2nd Oct Activities\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ncc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ncc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ncc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ncc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ncc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ncc/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ncc/6138f502d179dfff122ddf38",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ncc",
+								"6138f502d179dfff122ddf38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ncc/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"img\": \"nss1.jpg\",\r\n    \"title\": \"1nd Oct Activities\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ncc/6139a7fb90bfec1531260af6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ncc",
+								"6139a7fb90bfec1531260af6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ncc/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/ncc/6139a7fb90bfec1531260af6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ncc",
+								"6139a7fb90bfec1531260af6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gallery",
+			"item": [
+				{
+					"name": "gallery",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Other Activities\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery/61508c39ce0b67298fccb277",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery",
+								"61508c39ce0b67298fccb277"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Annual Function\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery/61508993d176ff3486c78450",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery",
+								"61508993d176ff3486c78450"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery/61508c39ce0b67298fccb277",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery",
+								"61508c39ce0b67298fccb277"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery/img/:id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/home/aditya/Documents/gallery/Other/o5.jpg"
+								},
+								{
+									"key": "title",
+									"value": "Picnic -Nal Sarovar",
+									"type": "text"
+								},
+								{
+									"key": "isBig",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery/6154aec525c56f7e99da0896",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery",
+								"6154aec525c56f7e99da0896"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery/img/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/home/aditya/Downloads/pic/c096925b-9d56-4dca-a018-d7ba7dde1067.jpeg"
+								},
+								{
+									"key": "title",
+									"value": "test img",
+									"type": "text"
+								},
+								{
+									"key": "isBig",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery/61508993d176ff3486c78450",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery",
+								"61508993d176ff3486c78450"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery/img/:id/:imgId",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "isBig",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery/img/6154aec525c56f7e99da0896/6154af6d25c56f7e99da08ba",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery",
+								"img",
+								"6154aec525c56f7e99da0896",
+								"6154af6d25c56f7e99da08ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gallery/img/:id/:imgId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/home/aditya/Downloads/pic/c096925b-9d56-4dca-a018-d7ba7dde1067.jpeg"
+								},
+								{
+									"key": "title",
+									"value": "test img",
+									"type": "text"
+								},
+								{
+									"key": "isBig",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/gallery/img/61508993d176ff3486c78450/6150a88f34b714cb2f521ddb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"gallery",
+								"img",
+								"61508993d176ff3486c78450",
+								"6150a88f34b714cb2f521ddb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "syllabus",
+			"item": [
+				{
+					"name": "syllabus",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Management\",\n  \"img\": \"management.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/syllabus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c91de4bfeacf25702e1fd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c91de4bfeacf25702e1fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"title\": \"test2\",\n  \"img\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c91de4bfeacf25702e1fd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c91de4bfeacf25702e1fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c94dfcd5ed1d21dc2eb2c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c94dfcd5ed1d21dc2eb2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus:id/subCourse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"test\",\n    \"maniTitle\": \"test\",\n    \"name\":\"test\",\n    \"pdfs\":[\n        \"test\",\n        \"test\",\n        \"test\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c94dfcd5ed1d21dc2eb2c/subCourse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c94dfcd5ed1d21dc2eb2c",
+								"subCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus:id/subCourse/:subCourseId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"test\",\n    \"maniTitle\": \"test\",\n    \"name\":\"test\",\n    \"pdfs\":[\n        \"test\",\n        \"test\",\n        \"test\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c94dfcd5ed1d21dc2eb2c/subCourse/615c95160ce44be6a2edbcde",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c94dfcd5ed1d21dc2eb2c",
+								"subCourse",
+								"615c95160ce44be6a2edbcde"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus:id/subCourse",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c94dfcd5ed1d21dc2eb2c/subCourse/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c94dfcd5ed1d21dc2eb2c",
+								"subCourse",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus/:id/subCourse/:subCourseId",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"test2\",\n    \"maniTitle\": \"test2\",\n    \"name\":\"test\",\n    \"pdfs\":[\n        \"test\",\n        \"test\",\n        \"test\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c94dfcd5ed1d21dc2eb2c/subCourse/615c95160ce44be6a2edbcde",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c94dfcd5ed1d21dc2eb2c",
+								"subCourse",
+								"615c95160ce44be6a2edbcde"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syllabus/:id/subCourse/:subCourseId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/syllabus/615c94dfcd5ed1d21dc2eb2c/subCourse/615c951f0ce44be6a2edbce5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"syllabus",
+								"615c94dfcd5ed1d21dc2eb2c",
+								"subCourse",
+								"615c951f0ce44be6a2edbce5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
