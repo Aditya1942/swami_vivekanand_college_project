@@ -21,11 +21,14 @@ app.use(express_1.default.json());
 (0, db_1.default)();
 console.log(path_1.default.join(__dirname, "../"));
 app.use(express_1.default.static(path_1.default.resolve(__dirname, "../public/")));
-app.get("/api", (req, res) => res.send("Hello World!"));
+app.get("/api", (req, res) => res.send("server is running"));
 app.use("/api/auth", auth_1.default);
 app.use("/api/courses", Course_1.default);
 app.use("/api", NssNcc_1.default);
 app.use("/api/coCurricularActivity", CoCurricularActivities_1.default);
 app.use("/api/gallery", Gallery_1.default);
 app.use("/api/syllabus", Syllabus_1.default);
+app.get("*", function (req, res) {
+    res.sendFile(path_1.default.join(__dirname, "../public/"));
+});
 //# sourceMappingURL=index.js.map

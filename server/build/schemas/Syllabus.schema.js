@@ -35,6 +35,10 @@ const SyllabusSchema = new mongoose_1.default.Schema({
             ],
         },
     ],
+    date: {
+        type: Date,
+        default: Date.now,
+    },
 });
 let Syllabus = mongoose_1.default.model("Syllabus", SyllabusSchema);
 exports.default = Syllabus;

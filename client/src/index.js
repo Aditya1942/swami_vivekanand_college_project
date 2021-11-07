@@ -1,44 +1,45 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import axios from "axios";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import axios from 'axios'
 // import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom'
+import { config } from './Constants'
 
-const BASE_URL = process.env.REACT_APP_API_URL;
-let token = localStorage.getItem("token");
-axios.defaults.baseURL = BASE_URL;
-axios.defaults.headers.common["Authorization"] = token;
-axios.defaults.headers.post["Content-Type"] = "application/json";
+const BASE_URL = config.API_URL
+let token = localStorage.getItem('token')
+axios.defaults.baseURL = BASE_URL
+axios.defaults.headers.common['Authorization'] = token
+axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.validateStatus = function (status) {
-  return status >= 200 && status <= 500; // default
-};
+  return status >= 200 && status <= 500 // default
+}
 axios.interceptors.request.use(
-  (request) => {
-    console.log(request);
+  request => {
+    console.log(request)
     // Edit request config
-    return request;
+    return request
   },
-  (error) => {
-    console.log("error from root", error);
-    return error;
+  error => {
+    console.log('error from root', error)
+    return error
     //  Promise.reject(error);
   }
-);
+)
 
 axios.interceptors.response.use(
-  (response) => {
-    console.log(response);
+  response => {
+    console.log(response)
     // Edit response config
-    return response;
+    return response
   },
-  (error) => {
-    console.log(error);
-    return error;
+  error => {
+    console.log(error)
+    return error
     // Promise.reject(error);
   }
-);
+)
 
 ReactDOM.render(
   <React.StrictMode>
@@ -46,8 +47,8 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

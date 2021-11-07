@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { config } from '../Constants'
 import Header from '../Components/Header'
 import useLoader from '../hooks/useLoader'
 function openImage (base64URL) {
@@ -48,14 +49,7 @@ const Gallery = () => {
                 <h3>{item.title}</h3>
                 <div className='row gallery-item'>
                   {item.images.map(image => {
-                    // let imgurl =
-                    //   process.env.PUBLIC_URL +
-                    //   "/img/" +
-                    //   item.folderPath +
-                    //   "/" +
-                    //   image.img;
-                    let imgurl =
-                      process.env.REACT_APP_IMG_URL + 'img/gallery/' + image.img
+                    let imgurl = config.APP_URL + 'img/gallery/' + image.img
                     return (
                       <div className={image.isBig ? 'col-md-6' : 'col-md-4'}>
                         <span className='img-pop-up'>

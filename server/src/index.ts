@@ -25,10 +25,13 @@ connectDB();
 console.log(path.join(__dirname, "../"));
 app.use(express.static(path.resolve(__dirname, "../public/")));
 
-app.get("/api", (req, res) => res.send("Hello World!"));
+app.get("/api", (req, res) => res.send("server is running"));
 app.use("/api/auth", AuthRoute);
 app.use("/api/courses", CoursesRoute);
 app.use("/api", NssNccRoute);
 app.use("/api/coCurricularActivity", CoCurricularActivityRoute);
 app.use("/api/gallery", Gallery);
 app.use("/api/syllabus", Syllabus);
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/"));
+});

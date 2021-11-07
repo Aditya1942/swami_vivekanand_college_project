@@ -10,7 +10,7 @@ const Gallery_schema_1 = __importDefault(require("../schemas/Gallery.schema"));
 const router = express_1.default.Router();
 const storage = multer_1.default.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "public/image/gallery");
+        cb(null, "public/img/gallery");
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() +

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-const db = process.env.MONGO_URI;
+const db = process.env.MONGO_URI_LIVE;
 const connectDB = async () => {
     console.log(db);
     try {

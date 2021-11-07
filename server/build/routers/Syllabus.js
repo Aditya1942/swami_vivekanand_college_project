@@ -22,7 +22,7 @@ router.post("/", auth_js_1.default, async (req, res) => {
         res.status(400).send(error.message);
     }
 });
-router.get("/", auth_js_1.default, async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const syllabus = await Syllabus_schema_1.default.find();
         res.status(200).send(syllabus);
@@ -31,7 +31,7 @@ router.get("/", auth_js_1.default, async (req, res) => {
         res.status(400).send(error.message);
     }
 });
-router.get("/:id", auth_js_1.default, async (req, res) => {
+router.get("/:id", async (req, res) => {
     try {
         const syllabus = await Syllabus_schema_1.default.findById(req.params.id);
         if (!syllabus) {
@@ -94,7 +94,7 @@ router.post("/:id/subCourse", auth_js_1.default, async (req, res) => {
         res.status(400).send(error.message);
     }
 });
-router.get("/:id/subCourse", auth_js_1.default, async (req, res) => {
+router.get("/:id/subCourse", async (req, res) => {
     try {
         const syllabus = await Syllabus_schema_1.default.findById(req.params.id);
         if (!syllabus) {
@@ -106,7 +106,7 @@ router.get("/:id/subCourse", auth_js_1.default, async (req, res) => {
         res.status(400).send(error.message);
     }
 });
-router.get("/:id/subCourse/:subCourseId", auth_js_1.default, async (req, res) => {
+router.get("/:id/subCourse/:subCourseId", async (req, res) => {
     try {
         const syllabus = await Syllabus_schema_1.default.findById(req.params.id);
         if (!syllabus) {
